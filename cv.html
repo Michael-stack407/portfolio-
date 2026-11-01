@@ -1,210 +1,715 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<title>CV - Andritiana Michael Rafidiarison</title>
-<style>
-  @page {
-    size: A4;
-    margin: 10mm 12mm 10mm 12mm;
-  }
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #333333;
-    background-color: #ffffff;
-    font-size: 9pt;
-    line-height: 1.3;
-  }
-  header {
-    display: flex;
-    align-items: center;
-    border-bottom: 2px solid #2c3e50;
-    padding-bottom: 8px;
-    margin-bottom: 8px;
-  }
-  .photo-box {
-    width: 75px;
-    height: 95px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    overflow: hidden;
-    margin-right: 15px;
-    flex-shrink: 0;
-  }
-  .photo-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .header-details h1 {
-    font-size: 15pt;
-    color: #2c3e50;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-  .header-details h2 {
-    font-size: 11pt;
-    color: #2980b9;
-    margin: 2px 0 5px 0;
-    text-transform: uppercase;
-  }
-  .contacts {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px 10px;
-    font-size: 8pt;
-    color: #555;
-  }
-  .contacts a {
-    color: #2980b9;
-    text-decoration: none;
-  }
-  section {
-    margin-bottom: 8px;
-  }
-  h3 {
-    font-size: 9.5pt;
-    color: #2c3e50;
-    text-transform: uppercase;
-    border-bottom: 1px solid #bdc3c7;
-    padding-bottom: 2px;
-    margin-bottom: 4px;
-  }
-  p, li {
-    font-size: 8.5pt;
-    color: #444;
-  }
-  ul {
-    padding-left: 15px;
-    margin: 2px 0;
-  }
-  .item {
-    margin-bottom: 4px;
-  }
-  .item-header {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-    color: #2c3e50;
-  }
-  .item-date {
-    font-weight: normal;
-    color: #666;
-    font-style: italic;
-  }
-  .grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV & Portfolio - Andritiana Michael Rafidiarison | Développeur Full-Stack</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            cyan: '#06b6d4',
+                            emerald: '#10b981',
+                            purple: '#8b5cf6',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Modern Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        /* Glassmorphism effects */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .light .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        /* A4 Print Stylesheet Optimization */
+        @media print {
+            @page {
+                size: A4;
+                margin: 12mm;
+            }
+            body {
+                background: white !important;
+                color: #1e293b !important;
+                font-size: 11px !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-full-width {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .glass-card {
+                background: transparent !important;
+                border: 1px solid #e2e8f0 !important;
+                box-shadow: none !important;
+                backdrop-filter: none !important;
+                break-inside: avoid;
+            }
+            .text-white, .text-slate-100, .text-slate-200, .text-slate-300 {
+                color: #0f172a !important;
+            }
+            .text-slate-400, .text-slate-500 {
+                color: #475569 !important;
+            }
+            .bg-slate-900, .bg-slate-950, .bg-slate-800 {
+                background: #ffffff !important;
+            }
+            .badge-print {
+                border: 1px solid #cbd5e1 !important;
+                color: #1e293b !important;
+                background: #f8fafc !important;
+            }
+            .print-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 12px !important;
+            }
+            .print-break-inside-avoid {
+                break-inside: avoid;
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white transition-colors duration-300 min-h-screen flex flex-col">
 
-  <!-- EN-TÊTE -->
-  <header>
-    <div class="photo-box">
-      <!-- Mettez ici le nom de votre photo ou l'URL -->
-      <img src="1792285129524.jpg" alt="Photo de profil">
-    </div>
-    <div class="header-details">
-      <h1>Rafidiarison <h3>Andritiana Michael</p></h1>
-      <h2>Développeur Full-Stack</h2>
-      <div class="contacts">
-        <div><b>Tél :</b> 038 41 34 965</div>
-        <div><b>WhatsApp :</b> +261 38 41 34 965</div>
-        <div><b>Email :</b> michaelandritiana586@gmail.com</div>
-        <div><b>Adresse :</b> Lot SIA B 02 Ambondrona, Tana</div>
-        <div><b>GitHub :</b> <a href="#">github.com/michael-rafidiarison</a></div>
-        <div><b>LinkedIn :</b> <a href="http//www.linkedin.com/in/rafidiarison-andritiana-michael-545207370">RAFIDIARISON-Andritiana-michael</a></div>
-      </div>
-    </div>
-  </header>
+    <!-- Top Action Bar (Print & Actions) -->
+    <header class="no-print sticky top-0 z-50 glass-card border-b border-slate-800 bg-slate-900/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-sm font-semibold tracking-wide text-slate-200">Portfolio & CV interactif</span>
+            </div>
 
-  <!-- PROFIL -->
-  <section>
-    <h3>Profil Professionnel</h3>
-    <p>Développeur Full-Stack passionné et autodidacte, spécialisé dans la conception d'applications web et mobiles. Expérience solide en administration réseau, maintenance informatique et développement d'architectures dynamiques (React, Symfony, Nodejs, API).</p>
-  </section>
+            <div class="flex items-center space-x-3">
+                <!-- Share Button -->
+                <button onclick="copyToClipboard('https://github.com/michael-rafidiarison', 'Lien GitHub copié !')" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-all flex items-center gap-2 border border-slate-700">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    <span class="hidden sm:inline">Partager</span>
+                </button>
 
-  <!-- COMPETENCES -->
-  <section>
-    <h3>Compétences & Savoir-Faire</h3>
-    <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 10px; list-style-type: none;">
-      <li><b>Frontend :</b> HTML5, CSS, JS, React JS, Node JS, Bootstrap, Tailwind CSS, AOS</li>
-      <li><b>Backend & API :</b> PHP, Symfony, POO, REST API</li>
-      <li><b>Bases de données :</b> MySQL, MariaDB</li>
-      <li><b>Design & Outils :</b> UI/UX Design, Photoshop, WordPress, IA, Canvas</li>
-      <li><b>Système & Réseau :</b> Maintenance Hardware/Software, LAN/WAN</li>
-      <li><b>Autre :</b> Diagnostic auto, Électricité bâtiment</li>
-    </ul>
-  </section>
+                <!-- PDF Download / Print Button -->
+                <button onclick="window.print()" class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-lg shadow-blue-500/20 transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                    <i class="fa-solid fa-file-arrow-down"></i>
+                    <span>Imprimer / Télécharger PDF</span>
+                </button>
+            </div>
+        </div>
+    </header>
 
-  <!-- PROJETS -->
-  <section>
-    <h3>Projets Réalisés</h3>
-    <div class="item">
-      <div class="item-header"><span>Stush (Réseau Social Scolaire)</span><span style="color:#2980b9; font-size:7.5pt;">[Lien GitHub]</span></div>
-      <p>Réseau social pour école privée (React JS / Symfony).</p>
-    </div>
-    <div class="item">
-      <div class="item-header"><span>Me-tsena (Plateforme E-Commerce)</span><span style="color:#2980b9; font-size:7.5pt;">[Lien Github]</span></div>
-      <p>Site d'achat/vente en ligne relié par une API REST (React & Symfony).</p>
-    </div>
-    <div class="item">
-      <div class="item-header"><span>Driveway (Taxi & Location de Voitures)</span><span style="color:#2980b9; font-size:7.5pt;">[Lien GitHub]</span></div>
-      <p>Application web de réservation et location (React JS & Tailwind).</p>
-    </div>
-    <div class="item">
-      <div class="item-header"><span>Agence Immobilière & Garage Auto</span><span style="color:#2980b9; font-size:7.5pt;">[Lien GitHub]</span></div>
-      <p>Sites vitrines et de gestion de prestations (HTML5, CSS, JS, PHP).</p>
-    </div>
-  </section>
+    <!-- Main Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-10">
 
-  <!-- EXPERIENCES -->
-  <section>
-    <h3>Expériences Professionnelles</h3>
-    <div class="item">
-      <div class="item-header"><span>Chauffeur Taxi-Moto Particulier</span><span class="item-date">Mai 2025 - Présent</span></div>
-      <p>Transport privé de personnes et gestion d'itinéraires urbains à Antananarivo.</p>
-    </div>
-    <div class="item">
-      <div class="item-header"><span>Livreur à Vélo - Milomay</span><span class="item-date">2023 - 2024</span></div>
-      <p>Prise en charge, livraison rapide de colis et gestion de la relation client.</p>
-    </div>
-    <div class="item">
-      <div class="item-header"><span>Diagnostic Automobile - Garage Mihary</span><span class="item-date">2023 - 2024</span></div>
-      <p>Diagnostic électronique et mécanique, recherche de pannes et solutions techniques.</p>
-    </div>
-    <div class="item">
-      <div class="item-header"><span>Gérant & Technicien Réseau - Cyber Mazava</span><span class="item-date">2022 - 2023</span></div>
-      <p>Gestion opérationnelle, maintenance de l'infrastructure réseau et du parc informatique.</p>
-    </div>
-  </section>
+        <!-- HEADER / HERO SECTION -->
+        <section class="glass-card rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden print-break-inside-avoid border border-slate-800">
+            <!-- Decorative Accent Lights -->
+            <div class="no-print absolute -top-24 -right-24 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="no-print absolute -bottom-24 -left-24 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-  <!-- FORMATIONS & ATOUTS (2 colonnes en bas) -->
-  <div class="grid-2">
-    <section>
-      <h3>Formations & Diplômes</h3>
-      <div class="item"><b>Digital Skills - Dev Web</b> (2025)</div>
-      <div class="item"><b>Nir'info - Maintenance & Réseau</b> (2021)</div>
-      <div class="item"><b>L.T.P Alarobia - BACC Technique & BEP</b> (2019-2020)</div>
-      <div class="item"><b>CEG Tanjombato (BEPC) & EP Soanirina (CEPE)</b></div>
-    </section>
+            <div class="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-8">
+                <!-- Profile Image / Avatar -->
+                <div class="relative group flex-shrink-0">
+                    <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-2xl overflow-hidden border-2 border-brand-500/50 shadow-xl shadow-brand-500/10 bg-slate-800 relative">
+                        <img src="1792285129524.jpg" 
+                             alt="Andritiana Michael Rafidiarison" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80';">
+                    </div>
+                    <span class="no-print absolute -bottom-2 -right-2 bg-emerald-500 text-slate-950 text-xs font-bold px-2.5 py-1 rounded-full border-2 border-slate-900 flex items-center gap-1 shadow-md">
+                        <i class="fa-solid fa-check text-[10px]"></i> Dispo
+                    </span>
+                </div>
 
-    <section>
-      <h3>Langues, Aptitudes & Atouts</h3>
-      <p><b>Langues :</b> Malagasy (Maternel), Français (Intermédiaire), Anglais (Débutant)</p>
-      <p><b>Aptitudes :</b> Curieux, Discipliné, Autodidacte, Esprit d'équipe</p>
-      <p><b>Permis :</b> Permis A et Permis B récents</p>
-      <p><b>Atout :</b> Électricien bâtiment</p>
-    </section>
-  </div>
+                <!-- Bio & Primary Info -->
+                <div class="flex-grow text-center md:text-left space-y-4">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-2">
+                            <i class="fa-solid fa-code"></i> Développeur Web & Mobile
+                        </div>
+                        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                            Andritiana Michael <span class="bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">Rafidiarison</span>
+                        </h1>
+                        <p class="text-lg sm:text-xl font-medium text-slate-300 mt-1">
+                            Développeur Full-Stack & Technicien Système
+                        </p>
+                    </div>
 
+                    <!-- Summary -->
+                    <p class="text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
+                        Développeur Full-Stack passionné et autodidacte, spécialisé dans la conception d'applications web modernes et performantes. Expertise solide en architecture d'APIs REST, interfaces réactives (React, Tailwind), backend robuste (Symfony, Node.js) et administration système/réseau.
+                    </p>
+
+                    <!-- Contact & Social Links Grid -->
+                    <div class="pt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs sm:text-sm">
+                        <!-- Email -->
+                        <button onclick="copyToClipboard('michaelandritiana586@gmail.com', 'Email copié dans le presse-papier !')" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-slate-700 text-slate-300 transition-all text-left group">
+                            <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="truncate">
+                                <div class="text-[10px] text-slate-500 font-semibold uppercase">Email</div>
+                                <div class="font-medium truncate">michaelandritiana586@gmail.com</div>
+                            </div>
+                        </button>
+
+                        <!-- Phone / Whatsapp -->
+                        <a href="https://wa.me/261384134965" target="_blank" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-slate-700 text-slate-300 transition-all text-left group">
+                            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-slate-500 font-semibold uppercase">Téléphone & WhatsApp</div>
+                                <div class="font-medium">+261 38 41 34 965</div>
+                            </div>
+                        </a>
+
+                        <!-- Location -->
+                        <div class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 text-slate-300 text-left">
+                            <div class="w-8 h-8 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-slate-500 font-semibold uppercase">Localisation</div>
+                                <div class="font-medium">Ambondrona, Antananarivo</div>
+                            </div>
+                        </div>
+
+                        <!-- GitHub -->
+                        <a href="https://github.com/michael-rafidiarison" target="_blank" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-slate-700 text-slate-300 transition-all group">
+                            <div class="w-8 h-8 rounded-lg bg-slate-800 text-slate-200 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-github"></i>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-slate-500 font-semibold uppercase">GitHub</div>
+                                <div class="font-medium">michael-rafidiarison</div>
+                            </div>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="http://www.linkedin.com/in/rafidiarison-andritiana-michael-545207370" target="_blank" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-slate-700 text-slate-300 transition-all group">
+                            <div class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-slate-500 font-semibold uppercase">LinkedIn</div>
+                                <div class="font-medium truncate">Andritiana Michael</div>
+                            </div>
+                        </a>
+
+                        <!-- Driver Licenses -->
+                        <div class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 text-slate-300">
+                            <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center">
+                                <i class="fa-solid fa-id-card"></i>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-slate-500 font-semibold uppercase">Permis de Conduire</div>
+                                <div class="font-medium">Permis A & Permis B</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS & STACK SECTION -->
+        <section class="space-y-6 print-break-inside-avoid">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+                        <i class="fa-solid fa-layer-group text-blue-400"></i>
+                        Compétences & Technologies
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-400">Stack technique maîtrisée et outils de développement</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Frontend -->
+                <div class="glass-card rounded-2xl p-5 hover:border-blue-500/40 transition-all group">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2.5 rounded-xl bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-desktop text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-white">Frontend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 badge-print flex items-center gap-1.5">
+                            <i class="fa-brands fa-react text-cyan-400"></i> React JS
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 badge-print flex items-center gap-1.5">
+                            <i class="fa-brands fa-js text-yellow-400"></i> JavaScript ES6+
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 badge-print flex items-center gap-1.5">
+                            <i class="fa-brands fa-html5 text-orange-500"></i> HTML5 / CSS3
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 badge-print flex items-center gap-1.5">
+                            <i class="fa-solid fa-wind text-cyan-400"></i> Tailwind CSS
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 badge-print flex items-center gap-1.5">
+                            <i class="fa-brands fa-bootstrap text-purple-400"></i> Bootstrap
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 badge-print">
+                            AOS Animations
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Backend & API -->
+                <div class="glass-card rounded-2xl p-5 hover:border-emerald-500/40 transition-all group">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-server text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-white">Backend & API</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 badge-print flex items-center gap-1.5">
+                            <i class="fa-brands fa-php text-indigo-400"></i> PHP 8+
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 badge-print flex items-center gap-1.5">
+                            <i class="fa-brands fa-symfony text-white"></i> Symfony
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 badge-print flex items-center gap-1.5">
+                            <i class="fa-brands fa-node-js text-emerald-400"></i> Node.js
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 badge-print flex items-center gap-1.5">
+                            <i class="fa-solid fa-network-wired text-blue-400"></i> REST API & JSON
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 badge-print">
+                            POO & Architecture MVC
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Databases & Systems -->
+                <div class="glass-card rounded-2xl p-5 hover:border-purple-500/40 transition-all group">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2.5 rounded-xl bg-purple-500/10 text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-database text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-white">Bases de Données & Réseaux</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 badge-print flex items-center gap-1.5">
+                            <i class="fa-solid fa-database text-blue-400"></i> MySQL
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 badge-print flex items-center gap-1.5">
+                            <i class="fa-solid fa-server text-teal-400"></i> MariaDB
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 badge-print flex items-center gap-1.5">
+                            <i class="fa-solid fa-microchip text-amber-400"></i> Maintenance Hardware/Software
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 badge-print flex items-center gap-1.5">
+                            <i class="fa-solid fa-wifi text-emerald-400"></i> Administration LAN / WAN
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Design & Tools -->
+                <div class="glass-card rounded-2xl p-5 hover:border-pink-500/40 transition-all group lg:col-span-3">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2.5 rounded-xl bg-pink-500/10 text-pink-400 group-hover:bg-pink-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-pen-ruler text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-white">Design & Outils Complementaires</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 badge-print flex items-center gap-1.5">
+                            <i class="fa-solid fa-wand-magic-sparkles text-pink-400"></i> UI / UX Design
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 badge-print flex items-center gap-1.5">
+                            <i class="fa-solid fa-image text-blue-400"></i> Photoshop
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 badge-print flex items-center gap-1.5">
+                            <i class="fa-brands fa-wordpress text-cyan-400"></i> WordPress
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 badge-print flex items-center gap-1.5">
+                            <i class="fa-solid fa-robot text-emerald-400"></i> Intégration IA & Prompts
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 badge-print flex items-center gap-1.5">
+                            <i class="fa-solid fa-wrench text-amber-400"></i> Diagnostic Auto & Électricité Bâtiment
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FEATURED PROJECTS SHOWCASE -->
+        <section class="space-y-6 print-break-inside-avoid">
+            <div class="border-b border-slate-800 pb-4">
+                <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+                    <i class="fa-solid fa-laptop-code text-cyan-400"></i>
+                    Projets Réalisés & Portfolio
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-400">Applications réelles et projets de développement full-stack</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- Project 1: Stush -->
+                <div class="glass-card rounded-2xl p-6 hover:border-blue-500/50 transition-all flex flex-col justify-between group">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold uppercase tracking-wider text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded-md border border-blue-500/20">
+                                Réseau Social
+                            </span>
+                            <a href="https://github.com/michael-rafidiarison" target="_blank" class="no-print text-slate-400 hover:text-white transition-colors text-sm flex items-center gap-1 font-medium">
+                                <i class="fa-brands fa-github"></i> Code Source
+                            </a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                            Stush - Réseau Social Scolaire
+                        </h3>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            Plateforme d'échange et réseau social privé destiné aux étudiants et établissements scolaires. Gestion des profils, publications en temps réel et espaces de discussion sécurisés.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-800/80 flex flex-wrap gap-2">
+                        <span class="text-[11px] font-semibold text-slate-400 px-2.5 py-1 rounded bg-slate-900 border border-slate-800 badge-print">React JS</span>
+                        <span class="text-[11px] font-semibold text-slate-400 px-2.5 py-1 rounded bg-slate-900 border border-slate-800 badge-print">Symfony</span>
+                        <span class="text-[11px] font-semibold text-slate-400 px-2.5 py-1 rounded bg-slate-900 border border-slate-800 badge-print">REST API</span>
+                        <span class="text-[11px] font-semibold text-slate-400 px-2.5 py-1 rounded bg-slate-900 border border-slate-800 badge-print">MySQL</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: Me-tsena -->
+                <div class="glass-card rounded-2xl p-6 hover:border-emerald-500/50 transition-all flex flex-col justify-between group">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20">
+                                E-Commerce
+                            </span>
+                            <a href="https://github.com/michael-rafidiarison" target="_blank" class="no-print text-slate-400 hover:text-white transition-colors text-sm flex items-center gap-1 font-medium">
+                                <i class="fa-brands fa-github"></i> Code Source
+                            </a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                            Me-tsena - Plateforme E-Commerce
+                        </h3>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            Marketplace d'achat et vente en ligne complète. Intégration d'une API REST robuste, panier dynamique, gestion des stocks et catalogue d'articles réactif.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-800/80 flex flex-wrap gap-2">
+                        <span class="text-[11px] font-semibold text-slate-400 px-2.5 py-1 rounded bg-slate-900 border border-slate-800 badge-print">React JS</span>
+                        <span class="text-[11px] font-semibold text-slate-400 px-2.5 py-1 rounded bg-slate-900 border border-slate-800 badge-print">Symfony Backend</span>
+                        <span class="text-[11px] font-semibold text-slate-400 px-2.5 py-1 rounded bg-slate-900 border border-slate-800 badge-print">API REST</span>
+                        <span class="text-[11px] font-semibold text-slate-400 px-2.5 py-1 rounded bg-slate-900 border border-slate-800 badge-print">Tailwind CSS</span>
+                    </div>
+                </div>
+
+                <!-- Project 3: Driveway -->
+                <div class="glass-card rounded-2xl p-6 hover:border-cyan-500/50 transition-all flex flex-col justify-between group">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded-md border border-cyan-500/20">
+                                Service & Transport
+                            </span>
+                            <a href="https://github.com/michael-rafidiarison" target="_blank" class="no-print text-slate-400 hover:text-white transition-colors text-sm flex items-center gap-1 font-medium">
+                                <i class="fa-brands fa-github"></i> Code Source
+                            </a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                            Driveway - Taxi & Location de Voitures
+                        </h3>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            Application web moderne dédiée à la réservation de trajets en taxi et à la location de véhicules. Interface utilisateur intuitive adaptée sur mobile et ordinateur.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-800/80 flex flex-wrap gap-2">
+                        <span class="text-[11px] font-semibold text-slate-400 px-2.5 py-1 rounded bg-slate-900 border border-slate-800 badge-print">React JS</span>
+                        <span class="text-[11px] font-semibold text-slate-400 px-2.5 py-1 rounded bg-slate-900 border border-slate-800 badge-print">Tailwind CSS</span>
+                        <span class="text-[11px] font-semibold text-slate-400 px-2.5 py-1 rounded bg-slate-900 border border-slate-800 badge-print">Node.js</span>
+                    </div>
+                </div>
+
+                <!-- Project 4: Agence Immobilière & Garage Auto -->
+                <div class="glass-card rounded-2xl p-6 hover:border-purple-500/50 transition-all flex flex-col justify-between group">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2.5 py-1 rounded-md border border-purple-500/20">
+                                Vitrines & Gestion
+                            </span>
+                            <a href="https://github.com/michael-rafidiarison" target="_blank" class="no-print text-slate-400 hover:text-white transition-colors text-sm flex items-center gap-1 font-medium">
+                                <i class="fa-brands fa-github"></i> Code Source
+                            </a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">
+                            Agence Immobilière & Garage Auto
+                        </h3>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            Conception de sites vitrines dynamiques et d'outils de gestion de prestations de services pour agences immobilières et ateliers mécaniques.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-800/80 flex flex-wrap gap-2">
+                        <span class="text-[11px] font-semibold text-slate-400 px-2.5 py-1 rounded bg-slate-900 border border-slate-800 badge-print">HTML5 / CSS3</span>
+                        <span class="text-[11px] font-semibold text-slate-400 px-2.5 py-1 rounded bg-slate-900 border border-slate-800 badge-print">JavaScript</span>
+                        <span class="text-[11px] font-semibold text-slate-400 px-2.5 py-1 rounded bg-slate-900 border border-slate-800 badge-print">PHP</span>
+                        <span class="text-[11px] font-semibold text-slate-400 px-2.5 py-1 rounded bg-slate-900 border border-slate-800 badge-print">MySQL</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EXPERIENCES TIMELINE -->
+        <section class="space-y-6 print-break-inside-avoid">
+            <div class="border-b border-slate-800 pb-4">
+                <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+                    <i class="fa-solid fa-briefcase text-emerald-400"></i>
+                    Parcours Professionnel
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-400">Expériences en développement, réseaux et gestion</p>
+            </div>
+
+            <div class="relative border-l-2 border-slate-800 ml-4 md:ml-6 space-y-8 pl-6 md:pl-8">
+                
+                <!-- Experience 1 -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-900 border-2 border-blue-500 group-hover:bg-blue-500 transition-colors"></div>
+                    <div class="glass-card rounded-2xl p-5 hover:border-blue-500/30 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+                            <h3 class="text-lg font-bold text-white">Chauffeur Taxi-Moto Particulier</h3>
+                            <span class="text-xs font-semibold text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded-full w-fit">
+                                Mai 2025 - Présent
+                            </span>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-2 font-medium">Transport Privé & Logistique Urbaine — Antananarivo</p>
+                        <p class="text-sm text-slate-300">
+                            Service de transport privé de personnes, optimisation d'itinéraires urbains complexes et garantie d'une satisfaction client maximale.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-900 border-2 border-emerald-500 group-hover:bg-emerald-500 transition-colors"></div>
+                    <div class="glass-card rounded-2xl p-5 hover:border-emerald-500/30 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+                            <h3 class="text-lg font-bold text-white">Livreur à Vélo</h3>
+                            <span class="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full w-fit">
+                                2023 - 2024
+                            </span>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-2 font-medium">Milomay</p>
+                        <p class="text-sm text-slate-300">
+                            Prise en charge et livraison rapide de colis, ponctualité rigoureuse et gestion directe de la relation client sur le terrain.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-900 border-2 border-amber-500 group-hover:bg-amber-500 transition-colors"></div>
+                    <div class="glass-card rounded-2xl p-5 hover:border-amber-500/30 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+                            <h3 class="text-lg font-bold text-white">Technicien Diagnostic Automobile</h3>
+                            <span class="text-xs font-semibold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-full w-fit">
+                                2023 - 2024
+                            </span>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-2 font-medium">Garage Mihary</p>
+                        <p class="text-sm text-slate-300">
+                            Diagnostic électronique et mécanique avancé, recherche systématique de pannes complexes et mise en œuvre de solutions techniques durables.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience 4 -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-900 border-2 border-purple-500 group-hover:bg-purple-500 transition-colors"></div>
+                    <div class="glass-card rounded-2xl p-5 hover:border-purple-500/30 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+                            <h3 class="text-lg font-bold text-white">Gérant & Technicien Réseau</h3>
+                            <span class="text-xs font-semibold text-purple-400 bg-purple-500/10 px-2.5 py-1 rounded-full w-fit">
+                                2022 - 2023
+                            </span>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-2 font-medium">Cyber Mazava</p>
+                        <p class="text-sm text-slate-300">
+                            Gestion opérationnelle complète de l'établissement, maintenance préventive et corrective du parc informatique, configuration et sécurisation de l'infrastructure réseau LAN.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TWO COLUMNS: FORMATION & ATOUTS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 print-grid print-break-inside-avoid">
+            
+            <!-- Formations & Diplômes -->
+            <section class="space-y-4">
+                <div class="border-b border-slate-800 pb-3">
+                    <h2 class="text-xl font-bold text-white flex items-center gap-2.5">
+                        <i class="fa-solid fa-graduation-cap text-indigo-400"></i>
+                        Formations & Diplômes
+                    </h2>
+                </div>
+                <div class="space-y-3">
+                    <div class="glass-card p-4 rounded-xl border-l-4 border-indigo-500">
+                        <div class="font-bold text-white text-sm">Digital Skills - Développeur Web</div>
+                        <div class="text-xs text-indigo-400 font-semibold mt-0.5">2024 - 2025</div>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl border-l-4 border-blue-500">
+                        <div class="font-bold text-white text-sm">Nir'info - Maintenance & Réseau</div>
+                        <div class="text-xs text-blue-400 font-semibold mt-0.5">2021</div>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl border-l-4 border-cyan-500">
+                        <div class="font-bold text-white text-sm">L.T.P Alarobia - BACC Technique & BEP</div>
+                        <div class="text-xs text-cyan-400 font-semibold mt-0.5">2019 - 2020</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Langues & Qualités -->
+            <section class="space-y-4">
+                <div class="border-b border-slate-800 pb-3">
+                    <h2 class="text-xl font-bold text-white flex items-center gap-2.5">
+                        <i class="fa-solid fa-user-check text-cyan-400"></i>
+                        Langues & Atouts
+                    </h2>
+                </div>
+                <div class="glass-card p-5 rounded-xl space-y-4">
+                    <div>
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Langues Maîtrisées</h3>
+                        <div class="space-y-2 text-xs sm:text-sm">
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-200 font-medium">Malagasy</span>
+                                <span class="text-emerald-400 font-semibold">Langue Maternelle</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-1.5 no-print">
+                                <div class="bg-emerald-500 h-1.5 rounded-full w-full"></div>
+                            </div>
+
+                            <div class="flex justify-between items-center pt-1">
+                                <span class="text-slate-200 font-medium">Français</span>
+                                <span class="text-blue-400 font-semibold">Niveau Intermédiaire</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-1.5 no-print">
+                                <div class="bg-blue-500 h-1.5 rounded-full w-3/4"></div>
+                            </div>
+
+                            <div class="flex justify-between items-center pt-1">
+                                <span class="text-slate-200 font-medium">Anglais</span>
+                                <span class="text-slate-400 font-semibold">Niveau Débutant</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-1.5 no-print">
+                                <div class="bg-slate-600 h-1.5 rounded-full w-1/3"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-slate-800">
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Aptitudes Personnel</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs font-medium text-slate-300">Curieux & Investi</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs font-medium text-slate-300">Autodidacte</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs font-medium text-slate-300">Discipliné</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs font-medium text-slate-300">Esprit d'équipe</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs font-medium text-slate-300">Électricien bâtiment</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="no-print border-t border-slate-800 py-6 text-center text-xs text-slate-500">
+        <p>© 2026 Andritiana Michael Rafidiarison — Tous droits réservés.</p>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="no-print fixed bottom-5 right-5 bg-blue-600 text-white text-xs font-bold px-4 py-3 rounded-xl shadow-2xl opacity-0 transform translate-y-4 transition-all duration-300 pointer-events-none flex items-center gap-2 z-50">
+        <i class="fa-solid fa-circle-check text-sm"></i>
+        <span id="toast-message">Copié !</span>
+    </div>
+
+    <!-- Interactive Script -->
+    <script>
+        function copyToClipboard(text, message) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast(message);
+            }).catch(err => {
+                // Fallback for document.execCommand if needed
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast(message);
+            });
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            toastMessage.textContent = message;
+            toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+            toast.classList.add('opacity-100', 'translate-y-0');
+
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
