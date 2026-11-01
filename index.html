@@ -1,0 +1,2733 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1.0,
+                   maximum-scale=1.0,
+                   user-scalable=no">
+
+    <title>ME-TSENA | Miantsena amin'ny finday</title>
+
+    <!-- =========================
+         BOOTSTRAP
+    ========================== -->
+    <link href="./bootstrap/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- =========================
+         FONT AWESOME
+         Version récente pour les icônes
+    ========================== -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- =========================
+         AOS
+    ========================== -->
+    <link href="./aos/aos.css"
+          rel="stylesheet">
+
+    <!-- =========================
+         GOOGLE FONT
+    ========================== -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f6f8f7;
+            overflow-x: hidden;
+            padding-bottom: 80px;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+
+        /* =========================
+           HEADER MOBILE
+        ========================== */
+
+        .mobile-header {
+            background: #198754;
+            color: white;
+            padding: 12px 15px;
+            position: relative;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .header-cart {
+            position: relative;
+            color: white !important;
+            font-size: 21px;
+            border: none;
+            background: transparent;
+        }
+
+        .header-cart:focus {
+            box-shadow: none;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            font-size: 10px;
+            min-width: 18px;
+            min-height: 18px;
+        }
+
+
+        /* =========================
+           SEARCH
+        ========================== */
+
+        .search-box {
+            margin-top: 12px;
+            display: flex;
+            width: 100%;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 46px;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            padding: 10px 12px;
+            flex: 1;
+            min-width: 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .search-box input::placeholder {
+            color: #999;
+        }
+
+        .search-box button {
+            width: 52px;
+            border: none;
+            background: #ffc107;
+            color: #212529;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .search-box button:active {
+            transform: scale(.96);
+        }
+
+
+        /* =========================
+           PROMOTION
+        ========================== */
+
+        .promo {
+            margin: 15px;
+            border-radius: 16px;
+            padding: 20px;
+            color: white;
+            background: linear-gradient(
+                135deg,
+                #198754,
+                #20a464
+            );
+            box-shadow:
+                0 5px 15px rgba(0,0,0,.08);
+        }
+
+        .promo h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .promo p {
+            font-size: 13px;
+            opacity: .9;
+            margin-bottom: 15px;
+        }
+
+        .promo button {
+            border: none;
+            background: #ffc107;
+            color: #212529;
+            padding: 9px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .promo button:active {
+            transform: scale(.97);
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================== */
+
+        .section {
+            padding: 10px 15px;
+        }
+
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .section-title h4 {
+            font-size: 17px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .section-title a {
+            color: #198754;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           CATEGORIES
+        ========================== */
+
+        .categories {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            scrollbar-width: none;
+        }
+
+        .categories::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category {
+            min-width: 80px;
+            background: white;
+            padding: 12px 8px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow:
+                0 2px 8px rgba(0,0,0,.05);
+            cursor: pointer;
+            user-select: none;
+            flex-shrink: 0;
+            transition: .2s;
+        }
+
+        .category:active {
+            transform: scale(.95);
+        }
+
+        .category i {
+            display: block;
+            font-size: 22px;
+            color: #198754;
+            margin-bottom: 5px;
+            line-height: 1;
+        }
+
+        .category span {
+            display: block;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+
+        /* =========================
+           PRODUCTS
+        ========================== */
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow:
+                0 3px 10px rgba(0,0,0,.06);
+            position: relative;
+            min-width: 0;
+        }
+
+        .product-img {
+            display: block;
+            width: 100%;
+            height: 145px;
+            object-fit: cover;
+            background: #eee;
+        }
+
+        .product-content {
+            padding: 10px;
+        }
+
+        .product-category {
+            font-size: 9px;
+            color: #198754;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .product-name {
+            font-size: 13px;
+            font-weight: 600;
+            margin: 4px 0;
+            min-height: 20px;
+        }
+
+        .product-price {
+            font-size: 14px;
+            color: #198754;
+            font-weight: 700;
+        }
+
+        .product-unit {
+            color: #999;
+            font-size: 9px;
+        }
+
+        .add-btn {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border: none;
+            border-radius: 9px;
+            background: #198754;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .add-btn:active {
+            transform: scale(.90);
+        }
+
+        .discount {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: #dc3545;
+            color: white;
+            font-size: 9px;
+            padding: 4px 7px;
+            border-radius: 6px;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+
+        /* =========================
+           BOTTOM MENU MOBILE
+        ========================== */
+
+        .bottom-menu {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            height: 68px;
+
+            background: white;
+            border-top: 1px solid #ddd;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            z-index: 2000;
+
+            box-shadow:
+                0 -4px 15px rgba(0,0,0,.08);
+
+            padding-bottom:
+                env(safe-area-inset-bottom);
+        }
+
+        .bottom-item {
+            flex: 1;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            color: #777;
+            text-decoration: none;
+
+            font-size: 10px;
+
+            position: relative;
+
+            user-select: none;
+        }
+
+        .bottom-item i {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 3px;
+            line-height: 1;
+        }
+
+        .bottom-item.active {
+            color: #198754;
+        }
+
+        .bottom-item:active {
+            background: #f5f5f5;
+        }
+
+        .bottom-cart-badge {
+            position: absolute;
+            top: 10px;
+            right: calc(50% - 20px);
+            font-size: 8px;
+            min-width: 16px;
+            min-height: 16px;
+        }
+
+
+        /* =========================
+           CART
+        ========================== */
+
+        #cart-sidebar {
+            position: fixed;
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: white;
+
+            z-index: 3000;
+
+            transform: translateY(100%);
+
+            transition:
+                transform .35s ease;
+
+            display: flex;
+            flex-direction: column;
+
+            visibility: hidden;
+        }
+
+        #cart-sidebar.active {
+            transform: translateY(0);
+            visibility: visible;
+        }
+
+        .cart-header {
+            background: #198754;
+            color: white;
+            padding: 18px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            flex-shrink: 0;
+        }
+
+        .cart-header h5 {
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .cart-header button {
+            border: none;
+        }
+
+        .cart-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+
+            background: #f7f7f7;
+
+            padding: 8px;
+
+            border-radius: 10px;
+
+            margin-bottom: 10px;
+        }
+
+        .cart-item img {
+            width: 55px;
+            height: 55px;
+
+            object-fit: cover;
+
+            border-radius: 8px;
+
+            margin-right: 10px;
+
+            flex-shrink: 0;
+        }
+
+        .cart-footer {
+            padding: 15px;
+
+            border-top: 1px solid #ddd;
+
+            background: white;
+
+            flex-shrink: 0;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 13px;
+
+            border: none;
+
+            background: #198754;
+
+            color: white;
+
+            border-radius: 10px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+        }
+
+        .checkout-btn:active {
+            transform: scale(.98);
+        }
+
+
+        /* =========================
+           PAYMENT
+        ========================== */
+
+        .payment-box {
+            margin: 20px 15px;
+
+            padding: 18px;
+
+            background: white;
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 3px 10px rgba(0,0,0,.05);
+        }
+
+        .payment-number {
+            color: #198754;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .payment-box img {
+            object-fit: contain;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            margin-top: 30px;
+
+            padding: 30px 15px;
+
+            background: #212529;
+
+            color: white;
+        }
+
+        footer p {
+            font-size: 12px;
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           SMALL MOBILE
+        ========================== */
+
+        @media (max-width: 360px) {
+
+            .product-img {
+                height: 125px;
+            }
+
+            .product-price {
+                font-size: 12px;
+            }
+
+            .product-unit {
+                font-size: 8px;
+            }
+
+            .product-content {
+                padding: 8px;
+            }
+
+            .add-btn {
+                width: 29px;
+                height: 29px;
+                min-width: 29px;
+            }
+
+            .bottom-item {
+                font-size: 9px;
+            }
+
+            .bottom-item i {
+                font-size: 18px;
+            }
+
+        }
+
+
+        /* =========================
+           TABLET / DESKTOP
+           Le site reste mobile
+        ========================== */
+
+        @media (min-width: 768px) {
+
+            body {
+                max-width: 500px;
+                margin: 0 auto;
+                box-shadow:
+                    0 0 30px rgba(0,0,0,.08);
+                min-height: 100vh;
+            }
+
+            .bottom-menu {
+                max-width: 500px;
+                left: 50%;
+                right: auto;
+                width: 100%;
+                transform: translateX(-50%);
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<header class="mobile-header">
+
+    <div class="d-flex justify-content-between align-items-center">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-store me-1"></i>
+
+            ME-TSENA
+
+        </div>
+
+
+        <button
+            type="button"
+            onclick="toggleCart()"
+            class="btn p-0 header-cart">
+
+            <i class="fa-solid fa-basket-shopping"></i>
+
+            <span
+                id="header-cart-count"
+                class="badge bg-danger rounded-pill cart-badge">
+
+                0
+
+            </span>
+
+        </button>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            id="searchInput"
+            type="text"
+            placeholder="Inona no tadiavinao?"
+            autocomplete="off">
+
+        <button
+            type="button"
+            onclick="searchProducts()">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     PROMOTION
+====================================================== -->
+
+<section class="promo">
+
+    <h2>
+        🛒 Miantsena mora kokoa!
+    </h2>
+
+    <p>
+        Vokatra ilaina isan'andro,
+        vidiny tsara ary livraison
+        hatrany an-tranonao.
+    </p>
+
+    <button
+        type="button"
+        onclick="scrollToProducts()">
+
+        HIJERY VOKATRA
+
+    </button>
+
+</section>
+
+
+
+<!-- =====================================================
+     CATEGORIES
+====================================================== -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h4>
+            Sokajy
+        </h4>
+
+        <a
+            href="javascript:void(0)"
+            onclick="showAllProducts()">
+
+            Hijery rehetra
+
+        </a>
+
+    </div>
+
+
+    <div class="categories">
+
+
+        <!-- LEGUMES -->
+
+        <div
+            class="category"
+            onclick="filterCategory('Legioma')">
+
+            <i class="fa-solid fa-carrot"></i>
+
+            <span>
+                Legioma
+            </span>
+
+        </div>
+
+
+        <!-- FRUITS -->
+
+        <div
+            class="category"
+            onclick="filterCategory('Voankazo')">
+
+            <i class="fa-solid fa-apple-whole"></i>
+
+            <span>
+                Voankazo
+            </span>
+
+        </div>
+
+
+        <!-- VIANDE -->
+
+        <div
+            class="category"
+            onclick="filterCategory('Hena')">
+
+            <i class="fa-solid fa-drumstick-bite"></i>
+
+            <span>
+                Hena
+            </span>
+
+        </div>
+
+
+        <!-- EPICERIE -->
+
+        <div
+            class="category"
+            onclick="filterCategory('Épicerie')">
+
+            <i class="fa-solid fa-basket-shopping"></i>
+
+            <span>
+                Épicerie
+            </span>
+
+        </div>
+
+
+        <!-- HYGIENE -->
+
+        <div
+            class="category"
+            onclick="filterCategory('Fidiovana')">
+
+            <i class="fa-solid fa-pump-soap"></i>
+
+            <span>
+                Fidiovana
+            </span>
+
+        </div>
+
+
+        <!-- BOISSON -->
+
+        <div
+            class="category"
+            onclick="filterCategory('Zava-pisotro')">
+
+            <i class="fa-solid fa-bottle-water"></i>
+
+            <span>
+                Zava-pisotro
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PRODUCTS
+====================================================== -->
+
+<section
+    class="section"
+    id="products-section">
+
+
+    <div class="section-title">
+
+        <div>
+
+            <h4>
+                🔥 Vokatra malaza
+            </h4>
+
+            <small class="text-muted">
+                Zavatra ilaina isan'andro
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="product-grid"
+        class="product-grid">
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAYMENT
+====================================================== -->
+
+<section class="payment-box">
+
+    <h5 class="fw-bold mb-3">
+
+        <i
+            class="fa-solid fa-shield-halved text-success me-2">
+        </i>
+
+        Fandoavana azo antoka
+
+    </h5>
+
+
+    <div class="d-flex align-items-center">
+
+        <img
+            src="./image/Mvola.png"
+            height="40"
+            class="me-3"
+            alt="MVola">
+
+
+        <div>
+
+            <small class="text-muted">
+                Alefaso amin'ny MVola
+            </small>
+
+            <div class="payment-number">
+                038 41 349 65
+            </div>
+
+            <small class="text-muted">
+                Andritiana Michael
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+    <h4 class="fw-bold">
+        ME-TSENA
+    </h4>
+
+
+    <p>
+
+        Mitondra ny tsena ho any an-tranonao.
+        Vokatra ilaina isan'andro,
+        commande mora ary livraison haingana.
+
+    </p>
+
+
+    <p>
+
+        <i class="fa-brands fa-whatsapp me-2"></i>
+
+        +261 38 41 349 65
+
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     BOTTOM MENU
+====================================================== -->
+
+<nav class="bottom-menu">
+
+
+    <!-- ACCUEIL -->
+
+    <a
+        href="javascript:void(0)"
+        class="bottom-item active"
+        onclick="goHome()">
+
+        <i class="fa-solid fa-house"></i>
+
+        <span>
+            Accueil
+        </span>
+
+    </a>
+
+
+    <!-- CATEGORIES -->
+
+    <a
+        href="javascript:void(0)"
+        class="bottom-item"
+        onclick="showCategories()">
+
+        <i class="fa-solid fa-table-cells-large"></i>
+
+        <span>
+            Catégories
+        </span>
+
+    </a>
+
+
+    <!-- RECHERCHE -->
+
+    <a
+        href="javascript:void(0)"
+        class="bottom-item"
+        onclick="focusSearch()">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <span>
+            Recherche
+        </span>
+
+    </a>
+
+
+    <!-- PANIER -->
+
+    <a
+        href="javascript:void(0)"
+        class="bottom-item"
+        onclick="toggleCart()">
+
+        <i class="fa-solid fa-basket-shopping"></i>
+
+        <span>
+            Panier
+        </span>
+
+        <span
+            id="bottom-cart-count"
+            class="badge bg-danger rounded-pill bottom-cart-badge">
+
+            0
+
+        </span>
+
+    </a>
+
+
+    <!-- COMPTE -->
+
+    <a
+        href="javascript:void(0)"
+        class="bottom-item"
+        onclick="showAccount()">
+
+        <i class="fa-solid fa-user"></i>
+
+        <span>
+            Compte
+        </span>
+
+    </a>
+
+</nav>
+
+
+
+<!-- =====================================================
+     CART SIDEBAR
+====================================================== -->
+
+<div id="cart-sidebar">
+
+
+    <!-- CART HEADER -->
+
+    <div class="cart-header">
+
+        <h5>
+
+            <i class="fa-solid fa-basket-shopping me-2"></i>
+
+            Ny Panyer-nao
+
+        </h5>
+
+
+        <button
+            type="button"
+            onclick="toggleCart()"
+            class="btn btn-close btn-close-white">
+
+        </button>
+
+    </div>
+
+
+
+    <!-- CART BODY -->
+
+    <div
+        id="cart-items"
+        class="cart-body">
+
+    </div>
+
+
+
+    <!-- CART FOOTER -->
+
+    <div class="cart-footer">
+
+
+        <div
+            class="d-flex justify-content-between mb-3">
+
+            <strong>
+                Total
+            </strong>
+
+            <strong
+                id="cart-total"
+                class="text-success">
+
+                0 Ar
+
+            </strong>
+
+        </div>
+
+
+        <button
+            type="button"
+            onclick="checkout()"
+            class="checkout-btn">
+
+            <i class="fa-solid fa-mobile-screen-button me-2"></i>
+
+            PAYER AVEC MVOLA
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT LIBRARIES
+====================================================== -->
+
+<script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script src="./aos/aos.js"></script>
+
+
+
+<script>
+
+/* =====================================================
+   PRODUCTS
+====================================================== */
+
+const products = [
+
+    {
+        id: 1,
+        name: "Riz",
+        price: 3500,
+        unit: "1 Kg",
+        img: "./image/images - 2026-08-15T202352.572.jpeg",
+        category: "Épicerie",
+        discount: 10
+    },
+
+    {
+        id: 2,
+        name: "Huile alimentaire",
+        price: 8500,
+        unit: "1 L",
+        img: "./image/images - 2026-08-15T202238.552.jpeg",
+        category: "Épicerie",
+        discount: 5
+    },
+
+    {
+        id: 3,
+        name: "Sucre",
+        price: 4000,
+        unit: "1 Kg",
+        img: "./image/sucre-blanc-de-canne-mascarin-1kg.jpg",
+        category: "Épicerie"
+    },
+
+    {
+        id: 4,
+        name: "Farine",
+        price: 4500,
+        unit: "1 Kg",
+        img: "./image/2025_08_21-Farine-de-Ble-Tous-usagesT45-1-1-1-400x590.png.webp",
+        category: "Épicerie"
+    },
+
+    {
+        id: 5,
+        name: "Lait",
+        price: 3500,
+        unit: "1 L",
+        img: "./image/download (25).jpeg",
+        category: "Épicerie"
+    },
+
+    {
+        id: 6,
+        name: "Pain",
+        price: 1000,
+        unit: "1 pièce",
+        img: "./image/illustration-adobe-stock-1614002068.jpg",
+        category: "Épicerie"
+    },
+
+    {
+        id: 7,
+        name: "Savon",
+        price: 2500,
+        unit: "1 pièce",
+        img: "./image/download (9).jpeg",
+        category: "Fidiovana"
+    },
+
+    {
+        id: 8,
+        name: "Eau minérale",
+        price: 3500,
+        unit: "1 bouteille",
+        img: "./image/download (65).jpeg",
+        category: "Zava-pisotro"
+    },
+
+    {
+        id: 9,
+        name: "Café",
+        price: 5000,
+        unit: "250 g",
+        img: "./image/images - 2026-08-15T202128.189.jpeg",
+        category: "Épicerie"
+    },
+
+    {
+        id: 10,
+        name: "Ananas",
+        price: 2500,
+        unit: "1 pièce",
+        img: "./image/anana.jpg",
+        category: "Voankazo"
+    },
+
+    {
+        id: 11,
+        name: "Akondro",
+        price: 3000,
+        unit: "1 Kg",
+        img: "./image/banana-5734_1280_opt.jpg",
+        category: "Voankazo"
+    },
+
+    {
+        id: 12,
+        name: "Voatabia",
+        price: 2000,
+        unit: "1 Kg",
+        img: "./image/tomate.jpg",
+        category: "Legioma"
+    },
+
+    {
+        id: 13,
+        name: "Poivron",
+        price: 1500,
+        unit: "1 Kg",
+        img: "./image/poivron.jpg",
+        category: "Legioma"
+    },
+
+    {
+        id: 14,
+        name: "Mangahazo",
+        price: 1000,
+        unit: "1 Kg",
+        img: "./image/manioc.jpg",
+        category: "Voankazo"
+    },
+
+    {
+        id: 15,
+        name: "Akoho",
+        price: 22000,
+        unit: "1 pièce",
+        img: "./image/poulet.jpg",
+        category: "Hena"
+    },
+
+    {
+        id: 16,
+        name: "Trondro vao",
+        price: 12000,
+        unit: "1 Kg",
+        img: "./image/images (37).jpeg",
+        category: "Hena"
+    },
+
+    {
+        id: 17,
+        name: "Atody",
+        price: 18000,
+        unit: "1 Vata",
+        img: "./image/oeuf.jpg",
+        category: "Épicerie"
+    },
+      
+     {
+        id: 18,
+        name: "Voaloboka",
+        price: 2500,
+        unit: "1 Kg",
+        img: "./image/lambrusco-traube-balsamico.jpg",
+        category: "Voankazo"
+    }, 
+      
+      {
+        id: 19,
+        name: "Mangue",
+        price: 3500,
+        unit: "1 Kg",
+        img: "./image/mangue.jpg",
+        category: "Voankazo"
+    },
+      
+      {
+        id: 20,
+        name: "Saucice Porc",
+        price: 18000,
+        unit: "1 Kg",
+        img: "./image/saussice.jpg",
+        category: "Hena"
+    },
+      
+      {
+        id: 21,
+        name: "Pomme de terre",
+        price: 1200,
+        unit: "1 Kg",
+        img: "./image/pomme de terre.jpg",
+        category: "Legioma"
+    },
+      
+      {
+        id: 22,
+        name: "Avocat",
+        price: 3200,
+        unit: "1 Kg",
+        img: "./image/avocat.jpg",
+        category: "Voankazo"
+    }, 
+      
+      {
+        id: 23,
+        name: "Yaourt",
+        price: 12000,
+        unit: "1 Packet",
+        img: "./image/yaourt-yoplait-nature-sucre-125g.jpg",
+        category: "Épicerie"
+    },
+      
+      {
+        id: 24,
+        name: "Fromage",
+        price: 7000,
+        unit: "500 g",
+        img: "./image/616-productZoom.jpg",
+        category: "Épicerie"
+    },
+      
+      {
+        id: 25,
+        name: "Hen'omby",
+        price: 12000,
+        unit: "1 Kg",
+        img: "./image/boeuf.jpg",
+        category: "Hena"
+    },
+      
+      {
+        id: 26,
+        name: "Jus Star",
+        price: 5500,
+        unit: "1 bouteille",
+        img: "./image/images (95).jpeg",
+        category: "Zava-pisotro"
+    },
+      
+      {
+        id: 27,
+        name: "Liquide Vaissel",
+        price: 4300,
+        unit: "1 Bouteil",
+        img: "./image/download.jpeg",
+        category: "Fidiovana"
+    },
+      
+      {
+        id: 28,
+        name: "Haricot vert",
+        price: 1200,
+        unit: "1 Kg",
+        img: "./image/haricot.jpg",
+        category: "Legioma"
+    },
+      
+      {
+        id: 29,
+        name: "Obergine",
+        price: 1200,
+        unit: "1 Kg",
+        img: "./image/obergine.jpg",
+        category: "Legioma"
+    },
+      
+      {
+        id: 30,
+        name: "Choux",
+        price: 1500,
+        unit: "1 Piece",
+        img: "./image/choux.jpg",
+        category: "Legioma"
+    },
+      
+      {
+        id: 31,
+        name: "Carrot",
+        price: 1200,
+        unit: "1 Kg",
+        img: "./image/6933079a35ec6-carrot.jpg",
+        category: "Legioma"
+    },
+      
+      {
+        id: 32,
+        name: "Brocoli",
+        price: 1200,
+        unit: "1 Pièce",
+        img: "./image/brocolis.jpg",
+        category: "Legioma"
+    },
+      
+      {
+        id: 33,
+        name: "Pastèque",
+        price: 2200,
+        unit: "1 Pièce",
+        img: "./image/pasteque.jpg",
+        category: "Voankazo"
+    },
+      
+      {
+        id: 34,
+        name: "Tongolo",
+        price: 4200,
+        unit: "1 Kg",
+        img: "./image/oignon.jpg",
+        category: "Legioma"
+    },
+      
+      {
+        id: 35,
+        name: "Papier Toilet",
+        price: 6500,
+        unit: "1 packet",
+        img: "./image/download (54).jpeg",
+        category: "Fidiovana"
+    },
+      
+      {
+        id: 36,
+        name: "Champoin cheuveux",
+        price: 22000,
+        unit: "1 boite",
+        img: "./image/download (12).jpeg",
+        category: "Fidiovana"
+    },
+      
+      {
+        id: 37,
+        name: "Pomme",
+        price: 3500,
+        unit: "1 Kg",
+        img: "./image/pomme.jpg",
+        category: "Voankazo"
+    },
+      
+      {
+        id: 38,
+        name: "Salade",
+        price: 1300,
+        unit: "1 Pièce",
+        img: "./image/salade.jpg",
+        category: "Legioma"
+    },
+      
+      {
+        id: 39,
+        name: "Poireau",
+        price: 1300,
+        unit: "1 Pièce",
+        img: "./image/poireau.jpg",
+        category: "Legioma"
+    },
+      
+      {
+        id: 40,
+        name: "Vomanga",
+        price: 1200,
+        unit: "1 Kg",
+        img: "./image/patate douce.jpg",
+        category: "Voankazo"
+    },
+      
+      {
+        id: 41,
+        name: "Courgette",
+        price: 3300,
+        unit: "1 Kg",
+        img: "./image/Courgette-mix-3.jpg",
+        category: "Legioma"
+    },
+      
+      {
+        id: 42,
+        name: "Savon nosy",
+        price: 1500,
+        unit: "1 pièce",
+        img: "./image/download (48).jpeg",
+        category: "Fidiovana"
+    },
+      
+      {
+        id: 43,
+        name: "Vovon-tsavony",
+        price: 4200,
+        unit: "1 Packet",
+        img: "./image/download (47).jpeg",
+        category: "Fidiovana"
+    },
+      
+      {
+        id: 44,
+        name: "Eau de javel",
+        price: 22500,
+        unit: "1 Boite",
+        img: "./image/download (45).jpeg",
+        category: "Fidiovana"
+    },
+      
+      {
+        id: 45,
+        name: "Cote de porc",
+        price: 16000,
+        unit: "1 Kg",
+        img: "./image/download (42).jpeg",
+        category: "Hena"
+    },
+      
+      {
+        id: 46,
+        name: "Totokena",
+        price: 8000,
+        unit: "1 Kg",
+        img: "./image/images (78).jpeg",
+        category: "Hena"
+    },
+      
+      {
+        id: 47,
+        name: "Petit poids",
+        price: 1200,
+        unit: "1 Kp",
+        img: "./image/download (40).jpeg",
+        category: "Legioma"
+    },
+      
+      {
+        id: 48,
+        name: "Sel",
+        price: 300,
+        unit: "1 pièce",
+        img: "./image/download (39).jpeg",
+        category: "Épicerie"
+     },
+      
+      {
+        id: 48,
+        name: "Sakamalaho",
+        price: 800,
+        unit: "1 Kp",
+        img: "./image/download (37).jpeg",
+        category: "Legioma"
+    },
+      
+      {
+        id: 49,
+        name: "Savon Parfumé",
+        price: 2200,
+        unit: "1 pièce",
+        img: "./image/download (66).jpeg",
+        category: "Fidiovana"
+    },
+      
+      
+     {
+        id: 50,
+        name: "Cigarette",
+        price: 4300,
+        unit: "1 packet",
+        img: "./image/images (70).jpeg",
+        category: "Épicerie"
+     },
+      
+      {
+        id: 51,
+        name: "Nouille instantané",
+        price: 12000,
+        unit: "1 packet",
+        img: "./image/images (64).jpeg",
+        category: "Épicerie"
+     },
+      
+      {
+        id: 52,
+        name: "Jambons",
+        price: 8000,
+        unit: "1 Kg",
+        img: "./image/images (62).jpeg",
+        category: "Hena"
+    },
+      
+      
+      {
+        id: 53,
+        name: "Macaroni",
+        price: 4000,
+        unit: "1 Sachet",
+        img: "./image/images (52).jpeg",
+        category: "Épicerie"
+     },
+      
+      
+      {
+        id: 54,
+        name: "Sardine",
+        price: 5200,
+        unit: "1 pièce",
+        img: "./image/images (38).jpeg",
+        category: "Épicerie"
+     },
+      
+      {
+        id: 55,
+        name: "Spagetti",
+        price: 6000,
+        unit: "1 Sachet",
+        img: "./image/images (56).jpeg",
+        category: "Épicerie"
+     },
+      
+      {
+        id: 56,
+        name: "Ronono mandry",
+        price: 7000,
+        unit: "1 Kp",
+        img: "./image/images (50).jpeg",
+        category: "Épicerie"
+     },
+      
+      
+      {
+        id: 59,
+        name: "Tsaramaso",
+        price: 1200,
+        unit: "1 Kp",
+        img: "./image/images (41).jpeg",
+        category: "Legioma"
+    },
+      
+      {
+        id: 60,
+        name: "Kabaro",
+        price: 1000,
+        unit: "1 Kp",
+        img: "./image/images (34).jpeg",
+        category: "Legioma"
+    },
+      
+      {
+        id: 61,
+        name: "Saucice fumé",
+        price: 13000,
+        unit: "1 Kg",
+        img: "./image/images (29).jpeg",
+        category: "Hena"
+    },
+      
+      {
+        id: 62,
+        name: "Crepin",
+        price: 7000,
+        unit: "1 Kg",
+        img: "./image/images (28).jpeg",
+        category: "Hena"
+    },
+      
+      {
+        id: 63,
+        name: "Fraise",
+        price: 3200,
+        unit: "1 Kg",
+        img: "./image/images (27).jpeg",
+        category: "Voankazo"
+    },
+      
+      {
+        id: 64,
+        name: "Papaye",
+        price: 1200,
+        unit: "1 pièce",
+        img: "./image/images (25).jpeg",
+        category: "Voankazo"
+    },
+      
+      {
+        id: 65,
+        name: "Mayonaise",
+        price: 7000,
+        unit: "1 Bocal",
+        img: "./image/download (15).jpeg",
+        category: "Épicerie"
+     },
+      
+      {
+        id: 66,
+        name: "Mask cheuveux",
+        price: 22000,
+        unit: "1 pièce",
+        img: "./image/images (19).jpeg",
+        category: "Fidiovana"
+    },
+      
+      
+      {
+        id: 67,
+        name: "Savon Toilet",
+        price: 5200,
+        unit: "1 packet",
+        img: "./image/images (16).jpeg",
+        category: "Fidiovana"
+    },
+      
+      {
+        id: 68,
+        name: "Jus Fruit",
+        price: 5100,
+        unit: "1 Boite",
+        img: "./image/images (12).jpeg",
+        category: "Zava-pisotro"
+    },
+      
+      {
+        id: 69,
+        name: "Dynamic",
+        price: 4500,
+        unit: "1 Canette",
+        img: "./image/download (4).jpeg",
+        category: "Zava-pisotro"
+    },
+      
+      {
+        id: 70,
+        name: "Eau gazeux",
+        price: 5500,
+        unit: "1 L",
+        img: "./image/download (3).jpeg",
+        category: "Zava-pisotro"
+    },
+      
+      {
+        id: 71,
+        name: "Kitoza fumé",
+        price: 7000,
+        unit: "1 Kg",
+        img: "./image/images (4).jpeg",
+        category: "Hena"
+    },
+      
+      
+      {
+        id: 72,
+        name: "Voasary",
+        price: 3200,
+        unit: "1 kg",
+        img: "./image/images (2).jpeg",
+        category: "Voankazo"
+    },
+      
+      {
+        id: 73,
+        name: "Vin rouge",
+        price: 45000,
+        unit: "1 Bouteil",
+        img: "./image/images (85).jpeg",
+        category: "Zava-pisotro"
+    },
+      
+];
+
+
+
+/* =====================================================
+   VARIABLES
+====================================================== */
+
+let cart = [];
+
+let displayedProducts = [...products];
+
+
+
+/* =====================================================
+   INITIALISATION
+====================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        if (typeof AOS !== "undefined") {
+
+            AOS.init({
+                duration: 700,
+                once: true
+            });
+
+        }
+
+        renderProducts();
+
+        updateCart();
+
+    }
+);
+
+
+
+/* =====================================================
+   DISPLAY PRODUCTS
+====================================================== */
+
+function renderProducts() {
+
+    const grid =
+        document.getElementById(
+            "product-grid"
+        );
+
+
+    if (!grid) {
+        return;
+    }
+
+
+    if (displayedProducts.length === 0) {
+
+        grid.innerHTML = `
+
+            <div
+                class="text-center py-5"
+                style="grid-column:1 / -1">
+
+                <i
+                    class="fa-solid fa-magnifying-glass fa-3x text-muted mb-3">
+                </i>
+
+                <p class="text-muted">
+
+                    Tsy nahita vokatra izahay.
+
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+    }
+
+
+    grid.innerHTML =
+
+        displayedProducts.map(
+            product => `
+
+            <div class="product-card">
+
+
+                ${
+                    product.discount
+                    ?
+                    `
+                    <span class="discount">
+
+                        -${product.discount}%
+
+                    </span>
+                    `
+                    :
+                    ""
+                }
+
+
+                <img
+                    src="${product.img}"
+                    class="product-img"
+                    alt="${product.name}"
+
+                    onerror="
+                        this.onerror=null;
+                        this.src='https://placehold.co/300x200?text=${encodeURIComponent(product.name)}';
+                    ">
+
+
+                <div class="product-content">
+
+
+                    <div class="product-category">
+
+                        ${product.category}
+
+                    </div>
+
+
+                    <div class="product-name">
+
+                        ${product.name}
+
+                    </div>
+
+
+                    <div
+                        class="d-flex
+                               justify-content-between
+                               align-items-center">
+
+
+                        <div>
+
+                            <span class="product-price">
+
+                                ${product.price.toLocaleString()}
+                                Ar
+
+                            </span>
+
+                            <span class="product-unit">
+
+                                / ${product.unit}
+
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="add-btn"
+                            onclick="
+                                addToCart(
+                                    ${product.id},
+                                    this
+                                )
+                            ">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        `
+        ).join("");
+
+}
+
+
+
+/* =====================================================
+   ADD TO CART
+====================================================== */
+
+function addToCart(
+    id,
+    button
+) {
+
+    const product =
+        products.find(
+            p => p.id === id
+        );
+
+
+    if (!product) {
+        return;
+    }
+
+
+    const existing =
+        cart.find(
+            item => item.id === id
+        );
+
+
+    if (existing) {
+
+        existing.quantity++;
+
+    } else {
+
+        cart.push({
+
+            ...product,
+
+            quantity: 1
+
+        });
+
+    }
+
+
+    updateCart();
+
+
+    button.innerHTML =
+        '<i class="fa-solid fa-check"></i>';
+
+
+    button.style.background =
+        "#146c43";
+
+
+    setTimeout(
+        () => {
+
+            button.innerHTML =
+                '<i class="fa-solid fa-plus"></i>';
+
+            button.style.background =
+                "#198754";
+
+        },
+        800
+    );
+
+}
+
+
+
+/* =====================================================
+   UPDATE CART
+====================================================== */
+
+function updateCart() {
+
+    const count =
+        cart.reduce(
+            (sum, item) =>
+                sum + item.quantity,
+            0
+        );
+
+
+    const headerCount =
+        document.getElementById(
+            "header-cart-count"
+        );
+
+
+    const bottomCount =
+        document.getElementById(
+            "bottom-cart-count"
+        );
+
+
+    if (headerCount) {
+
+        headerCount.innerText =
+            count;
+
+    }
+
+
+    if (bottomCount) {
+
+        bottomCount.innerText =
+            count;
+
+    }
+
+
+    const items =
+        document.getElementById(
+            "cart-items"
+        );
+
+
+    if (!items) {
+        return;
+    }
+
+
+    if (cart.length === 0) {
+
+        items.innerHTML = `
+
+            <div
+                class="text-center
+                       text-muted
+                       py-5">
+
+                <i
+                    class="fa-solid
+                           fa-basket-shopping
+                           fa-4x
+                           mb-3">
+                </i>
+
+                <p>
+
+                    Mbola foana
+                    ny panyer-nao.
+
+                </p>
+
+            </div>
+
+        `;
+
+    } else {
+
+        items.innerHTML =
+
+            cart.map(
+                (item, index) => `
+
+                <div class="cart-item">
+
+
+                    <img
+                        src="${item.img}"
+                        alt="${item.name}"
+
+                        onerror="
+                            this.onerror=null;
+                            this.src='https://placehold.co/100x100?text=Image';
+                        ">
+
+
+                    <div class="flex-grow-1">
+
+                        <strong>
+
+                            ${item.name}
+
+                        </strong>
+
+
+                        <div
+                            class="small
+                                   text-success
+                                   fw-bold">
+
+                            ${item.price.toLocaleString()}
+                            Ar
+
+                        </div>
+
+
+                        <div
+                            class="d-flex
+                                   align-items-center
+                                   mt-1">
+
+
+                            <button
+                                type="button"
+                                class="btn btn-sm btn-light"
+                                onclick="
+                                    changeQuantity(
+                                        ${index},
+                                        -1
+                                    )
+                                ">
+
+                                -
+
+                            </button>
+
+
+                            <span class="mx-2">
+
+                                ${item.quantity}
+
+                            </span>
+
+
+                            <button
+                                type="button"
+                                class="btn btn-sm btn-light"
+                                onclick="
+                                    changeQuantity(
+                                        ${index},
+                                        1
+                                    )
+                                ">
+
+                                +
+
+                            </button>
+
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        onclick="
+                            removeFromCart(
+                                ${index}
+                            )
+                        "
+                        class="btn text-danger">
+
+                        <i
+                            class="fa-solid fa-trash">
+                        </i>
+
+                    </button>
+
+                </div>
+
+            `
+            ).join("");
+
+    }
+
+
+    const total =
+        cart.reduce(
+            (sum, item) =>
+                sum +
+                item.price *
+                item.quantity,
+            0
+        );
+
+
+    const totalElement =
+        document.getElementById(
+            "cart-total"
+        );
+
+
+    if (totalElement) {
+
+        totalElement.innerText =
+            total.toLocaleString() +
+            " Ar";
+
+    }
+
+}
+
+
+
+/* =====================================================
+   CHANGE QUANTITY
+====================================================== */
+
+function changeQuantity(
+    index,
+    amount
+) {
+
+    if (!cart[index]) {
+        return;
+    }
+
+
+    cart[index].quantity +=
+        amount;
+
+
+    if (
+        cart[index].quantity <= 0
+    ) {
+
+        cart.splice(
+            index,
+            1
+        );
+
+    }
+
+
+    updateCart();
+
+}
+
+
+
+/* =====================================================
+   REMOVE FROM CART
+====================================================== */
+
+function removeFromCart(
+    index
+) {
+
+    if (!cart[index]) {
+        return;
+    }
+
+
+    cart.splice(
+        index,
+        1
+    );
+
+
+    updateCart();
+
+}
+
+
+
+/* =====================================================
+   TOGGLE CART
+====================================================== */
+
+function toggleCart() {
+
+    const cartSidebar =
+        document.getElementById(
+            "cart-sidebar"
+        );
+
+
+    if (!cartSidebar) {
+        return;
+    }
+
+
+    cartSidebar.classList.toggle(
+        "active"
+    );
+
+
+    document.body.style.overflow =
+        cartSidebar.classList.contains(
+            "active"
+        )
+        ?
+        "hidden"
+        :
+        "";
+
+}
+
+
+
+/* =====================================================
+   CATEGORY FILTER
+====================================================== */
+
+function filterCategory(
+    category
+) {
+
+    displayedProducts =
+        products.filter(
+            product =>
+                product.category ===
+                category
+        );
+
+
+    renderProducts();
+
+
+    const section =
+        document.getElementById(
+            "products-section"
+        );
+
+
+    if (section) {
+
+        section.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }
+
+}
+
+
+
+/* =====================================================
+   SHOW ALL PRODUCTS
+====================================================== */
+
+function showAllProducts() {
+
+    displayedProducts =
+        [...products];
+
+
+    renderProducts();
+
+
+    scrollToProducts();
+
+}
+
+
+
+/* =====================================================
+   SEARCH
+====================================================== */
+
+function searchProducts() {
+
+    const input =
+        document.getElementById(
+            "searchInput"
+        );
+
+
+    if (!input) {
+        return;
+    }
+
+
+    const keyword =
+        input.value
+            .toLowerCase()
+            .trim();
+
+
+    if (!keyword) {
+
+        displayedProducts =
+            [...products];
+
+    } else {
+
+        displayedProducts =
+            products.filter(
+                product =>
+
+                    product.name
+                        .toLowerCase()
+                        .includes(keyword)
+
+                    ||
+
+                    product.category
+                        .toLowerCase()
+                        .includes(keyword)
+
+            );
+
+    }
+
+
+    renderProducts();
+
+
+    scrollToProducts();
+
+}
+
+
+
+/* =====================================================
+   SEARCH FOCUS
+====================================================== */
+
+function focusSearch() {
+
+    const input =
+        document.getElementById(
+            "searchInput"
+        );
+
+
+    if (!input) {
+        return;
+    }
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+
+    setTimeout(
+        () => {
+
+            input.focus();
+
+        },
+        300
+    );
+
+}
+
+
+
+/* =====================================================
+   SCROLL PRODUCTS
+====================================================== */
+
+function scrollToProducts() {
+
+    const section =
+        document.getElementById(
+            "products-section"
+        );
+
+
+    if (section) {
+
+        section.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }
+
+}
+
+
+
+/* =====================================================
+   SHOW CATEGORIES
+====================================================== */
+
+function showCategories() {
+
+    const categories =
+        document.querySelector(
+            ".categories"
+        );
+
+
+    if (categories) {
+
+        categories.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    }
+
+}
+
+
+
+/* =====================================================
+   GO HOME
+====================================================== */
+
+function goHome() {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+
+/* =====================================================
+   ACCOUNT
+====================================================== */
+
+function showAccount() {
+
+    alert(
+        "Ny kaontinao\n\n" +
+        "Hampidirina eto ny Login / Inscription."
+    );
+
+}
+
+
+
+/* =====================================================
+   CHECKOUT
+====================================================== */
+
+function checkout() {
+
+    if (cart.length === 0) {
+
+        alert(
+            "Foana ny panyer-nao!"
+        );
+
+        return;
+
+    }
+
+
+    const total =
+        cart.reduce(
+            (sum, item) =>
+                sum +
+                item.price *
+                item.quantity,
+            0
+        );
+
+
+    let message =
+        "🛒 ME-TSENA - COMMANDE\n\n";
+
+
+    cart.forEach(
+        item => {
+
+            message +=
+
+                `${item.name} x${item.quantity} = ` +
+
+                `${(
+                    item.price *
+                    item.quantity
+                ).toLocaleString()} Ar\n`;
+
+        }
+    );
+
+
+    message +=
+
+        `\nTOTAL: ` +
+        `${total.toLocaleString()} Ar\n\n` +
+
+        `MVola: 038 41 349 65\n` +
+
+        `Nom: Andritiana Michael\n\n` +
+
+        `Misaotra tamin'ny commande ❤️`;
+
+
+    alert(message);
+
+
+    cart = [];
+
+
+    updateCart();
+
+
+    toggleCart();
+
+}
+
+</script>
+
+</body>
+</html>
