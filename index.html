@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio professionnel d'Andritiana Michael RAFIDIARISON - Développeur Web & Mobile Full-Stack. Conception de solutions digitales sur-mesure et performantes.">
+    <meta name="description" content="Portfolio professionnel d'Andritiana Michael RAFIDIARISON - Développeur Web & Mobile Full-Stack. Solutions web sur-mesure, optimisation et résolution de problèmes techniques.">
     <meta name="author" content="Andritiana Michael RAFIDIARISON">
-    <title>Andritiana Michael | Développeur Web & Mobile Full-Stack</title>
+    <title>Andritiana Michael RAFIDIARISON | Développeur Full-Stack & Solutions Web</title>
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -27,8 +27,7 @@
                         dark: {
                             bg: '#0b0f19',
                             card: '#111827',
-                            border: '#1f2937',
-                            hover: '#1e293b'
+                            border: '#1f2937'
                         }
                     },
                     fontFamily: {
@@ -57,7 +56,7 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Custom Glassmorphism & Utility Styles -->
+    <!-- Styles Personnalisés -->
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -67,7 +66,7 @@
         }
 
         .glass-card {
-            background: rgba(17, 24, 39, 0.7);
+            background: rgba(17, 24, 39, 0.75);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -89,32 +88,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .gradient-border {
-            position: relative;
-            border-radius: 1rem;
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(129, 140, 248, 0.1));
-            padding: 1px;
-        }
-
-        .glow-effect {
-            position: relative;
-        }
-        .glow-effect::before {
-            content: '';
-            position: absolute;
-            top: -2px; left: -2px; right: -2px; bottom: -2px;
-            background: linear-gradient(45deg, #2563eb, #06b6d4, #3b82f6);
-            border-radius: inherit;
-            z-index: -1;
-            filter: blur(12px);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .glow-effect:hover::before {
-            opacity: 0.6;
-        }
-
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -133,16 +106,15 @@
 
 <body class="bg-dark-bg text-gray-200 antialiased selection:bg-brand-500 selection:text-white">
 
-    <!-- Ambient Background Glows -->
+    <!-- Fond Lumineux FX -->
     <div class="fixed top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-slow"></div>
     <div class="fixed top-1/3 right-10 w-[30rem] h-[30rem] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
     <div class="fixed bottom-10 left-10 w-80 h-80 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
 
-    <!-- HEADER / NAVIGATION -->
+    <!-- EN-TÊTE / NAVIGATION -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <nav class="glass-card rounded-2xl px-5 py-3 flex items-center justify-between shadow-2xl border border-white/10">
-                <!-- Brand Logo -->
                 <a href="#home" class="flex items-center gap-2 text-xl font-extrabold tracking-tight text-white group">
                     <span class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-cyan-400 flex items-center justify-center text-white shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform">
                         <i data-lucide="code-2" class="w-5 h-5"></i>
@@ -150,121 +122,110 @@
                     <span>Michael<span class="text-brand-accent">.</span></span>
                 </a>
 
-                <!-- Desktop Nav Links -->
                 <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
                     <a href="#home" class="hover:text-brand-accent transition-colors">Accueil</a>
-                    <a href="#about" class="hover:text-brand-accent transition-colors">À propos</a>
+                    <a href="#solutions" class="hover:text-brand-accent transition-colors">Solutions Client</a>
                     <a href="#services" class="hover:text-brand-accent transition-colors">Services</a>
                     <a href="#skills" class="hover:text-brand-accent transition-colors">Compétences</a>
                     <a href="#projects" class="hover:text-brand-accent transition-colors">Projets</a>
+                    <a href="#about" class="hover:text-brand-accent transition-colors">Mon Parcours</a>
                     <a href="#contact" class="hover:text-brand-accent transition-colors">Contact</a>
                 </div>
 
-                <!-- CTA Button -->
                 <div class="hidden md:flex items-center gap-4">
                     <a href="#contact" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-cyan-500 text-white font-semibold text-sm shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:scale-105 transition-all flex items-center gap-2">
                         <i data-lucide="sparkles" class="w-4 h-4"></i>
-                        <span>Demander un devis</span>
+                        <span>Résoudre mon problème</span>
                     </a>
                 </div>
 
-                <!-- Mobile Menu Button -->
                 <button id="menu-btn" class="md:hidden p-2 text-gray-300 hover:text-white focus:outline-none">
                     <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
                 </button>
             </nav>
         </div>
 
-        <!-- Mobile Menu Dropdown -->
+        <!-- Menu Mobile -->
         <div id="mobile-menu" class="hidden md:hidden max-w-7xl mx-auto px-4 mt-2">
             <div class="glass-card rounded-2xl p-6 border border-white/10 flex flex-col gap-4 text-center">
                 <a href="#home" class="mobile-link py-2 text-gray-200 hover:text-brand-accent font-medium">Accueil</a>
-                <a href="#about" class="mobile-link py-2 text-gray-200 hover:text-brand-accent font-medium">À propos</a>
+                <a href="#solutions" class="mobile-link py-2 text-gray-200 hover:text-brand-accent font-medium">Solutions Client</a>
                 <a href="#services" class="mobile-link py-2 text-gray-200 hover:text-brand-accent font-medium">Services</a>
                 <a href="#skills" class="mobile-link py-2 text-gray-200 hover:text-brand-accent font-medium">Compétences</a>
                 <a href="#projects" class="mobile-link py-2 text-gray-200 hover:text-brand-accent font-medium">Projets</a>
+                <a href="#about" class="mobile-link py-2 text-gray-200 hover:text-brand-accent font-medium">Mon Parcours</a>
                 <a href="#contact" class="mobile-link py-2 text-gray-200 hover:text-brand-accent font-medium">Contact</a>
-                <a href="#contact" class="mobile-link py-3 bg-brand-600 text-white font-semibold rounded-xl mt-2">Demander un devis</a>
+                <a href="#contact" class="mobile-link py-3 bg-brand-600 text-white font-semibold rounded-xl mt-2">Demander une solution</a>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- SECTION HERO ACCUEIL -->
     <section id="home" class="min-h-screen pt-32 pb-20 flex items-center relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Hero Content -->
                 <div class="lg:col-span-7 text-center lg:text-left">
-                    
-                    <!-- Status Badge -->
                     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-emerald-500/30 text-emerald-400 text-xs font-semibold mb-6 shadow-sm">
                         <span class="relative flex h-2.5 w-2.5">
                           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                           <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                         </span>
-                        Disponible pour de nouveaux projets & Freelance
+                        Disponible pour résoudre vos problèmes web & freelancing
                     </div>
 
-                    <!-- Main Headline -->
                     <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
-                        Andritiana Michael <br/>
-                        <span class="gradient-text">RAFIDIARISON</span>
+                        Rafidiarison <br/>
+                        <span class="gradient-text">Andritiana Michael</span>
                     </h1>
 
-                    <!-- Dynamic Subtitle -->
                     <h2 class="text-xl sm:text-2xl font-semibold text-gray-300 mb-6 flex flex-wrap items-center justify-center lg:justify-start gap-2">
-                        Développeur Web & Mobile 
-                        <span class="px-3 py-1 rounded-lg bg-brand-500/10 text-brand-accent border border-brand-500/20 text-sm font-mono">Full-Stack</span>
+                        Développeur Full-Stack & Solutions Digitales Sur-Mesure
                     </h2>
 
-                    <!-- Pitch Description -->
                     <p class="text-gray-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8">
-                        Je transforme vos idées et objectifs métier en solutions numériques haute performance. Spécialisé dans les applications modernes, fluides et optimisées pour accélérer votre croissance.
+                        Votre site manque de visibilité, présente des bugs ou n'est pas adapté aux téléphones mobiles ? Je transforme vos difficultés techniques en sites performants, rapides et conçus pour séduire vos clients.
                     </p>
 
-                    <!-- CTAs & Actions -->
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                        <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-600 via-brand-500 to-cyan-500 text-white font-bold text-base shadow-xl shadow-brand-500/30 hover:shadow-brand-500/50 hover:scale-105 transition-all flex items-center justify-center gap-3">
-                            <i data-lucide="message-square-plus" class="w-5 h-5"></i>
-                            <span>Discuter de votre projet</span>
+                        <a href="#solutions" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-600 via-brand-500 to-cyan-500 text-white font-bold text-base shadow-xl shadow-brand-500/30 hover:shadow-brand-500/50 hover:scale-105 transition-all flex items-center justify-center gap-3">
+                            <i data-lucide="wrench" class="w-5 h-5"></i>
+                            <span>Voir mes solutions pour vos sites</span>
                         </a>
 
-                        <a href="#projects" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card hover:bg-white/10 text-white font-semibold text-base border border-white/15 transition-all flex items-center justify-center gap-3">
-                            <i data-lucide="folder-code" class="w-5 h-5 text-brand-accent"></i>
-                            <span>Voir mes réalisations</span>
+                        <a href="https://wa.me/+261384134965" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card hover:bg-emerald-600/20 text-emerald-400 font-semibold text-base border border-emerald-500/30 transition-all flex items-center justify-center gap-3">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            <span>WhatsApp Direct</span>
                         </a>
                     </div>
 
-                    <!-- Trust Stats Footprint -->
-                    <div class="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-800/80 max-w-lg mx-auto lg:mx-0">
+                    <!-- Coordonnées Rapides Header -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10 pt-6 border-t border-gray-800/80 text-xs text-gray-400">
                         <div>
-                            <div class="text-2xl sm:text-3xl font-extrabold text-white">100%</div>
-                            <div class="text-xs text-gray-400 mt-1">Code Clean & Responsive</div>
+                            <span class="block font-bold text-gray-200">Tél / WhatsApp</span>
+                            038 41 34 965
                         </div>
                         <div>
-                            <div class="text-2xl sm:text-3xl font-extrabold text-white">UX/UI</div>
-                            <div class="text-xs text-gray-400 mt-1">Design Moderne & Fluide</div>
+                            <span class="block font-bold text-gray-200">Localisation</span>
+                            Ambondrona, Tana
                         </div>
                         <div>
-                            <div class="text-2xl sm:text-3xl font-extrabold text-white">SEO</div>
-                            <div class="text-xs text-gray-400 mt-1">Performance & Vitesse</div>
+                            <span class="block font-bold text-gray-200">Spécialité</span>
+                            React / Symfony / PHP
+                        </div>
+                        <div>
+                            <span class="block font-bold text-gray-200">Engagement</span>
+                            Respect des Délais
                         </div>
                     </div>
-
                 </div>
 
-                <!-- Hero Interactive Visual Card -->
+                <!-- Profil Visuel Card -->
                 <div class="lg:col-span-5 flex justify-center">
                     <div class="relative w-full max-w-md">
-                        
-                        <!-- Glowing backdrop ring -->
                         <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-cyan-500 rounded-3xl blur-2xl opacity-30 animate-pulse-slow"></div>
 
-                        <!-- Main Profile Card Frame -->
                         <div class="relative glass-card rounded-3xl p-6 border border-white/15 shadow-2xl overflow-hidden">
-                            
-                            <!-- Profile Image Container -->
                             <div class="relative rounded-2xl overflow-hidden aspect-square mb-6 group bg-gray-900">
                                 <img src="1792285129524.jpg" 
                                      onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80';" 
@@ -274,38 +235,25 @@
                                 <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent opacity-80"></div>
                                 
                                 <div class="absolute bottom-4 left-4 right-4 text-left">
-                                    <span class="text-xs uppercase font-mono tracking-wider text-brand-accent">Basé à Antananarivo</span>
-                                    <h3 class="text-lg font-bold text-white">Michael RAFIDIARISON</h3>
+                                    <span class="text-xs uppercase font-mono tracking-wider text-brand-accent">Lot SIA B 02 Ambondrona, Tana</span>
+                                    <h3 class="text-lg font-bold text-white">Andritiana Michael RAFIDIARISON</h3>
                                 </div>
                             </div>
 
-                            <!-- Floating Badge 1 -->
-                            <div class="absolute top-10 -right-4 glass-card px-4 py-2.5 rounded-2xl border border-white/20 shadow-xl flex items-center gap-3 animate-float">
-                                <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
-                                    <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                            <div class="space-y-2 text-xs text-gray-300 font-mono">
+                                <div class="flex justify-between border-b border-white/5 pb-1">
+                                    <span class="text-gray-500">Email:</span>
+                                    <span class="text-white">michaelandritiana586@gmail.com</span>
                                 </div>
-                                <div>
-                                    <div class="text-xs font-bold text-white">Projets Livrés</div>
-                                    <div class="text-[10px] text-gray-400">Qualité Garantie</div>
+                                <div class="flex justify-between border-b border-white/5 pb-1">
+                                    <span class="text-gray-500">GitHub:</span>
+                                    <a href="https://github.com/michael-rafidiarison" target="_blank" class="text-brand-accent hover:underline">github.com/michael-rafidiarison</a>
                                 </div>
-                            </div>
-
-                            <!-- Floating Badge 2 -->
-                            <div class="absolute bottom-12 -left-4 glass-card px-4 py-2.5 rounded-2xl border border-white/20 shadow-xl flex items-center gap-3">
-                                <div class="w-8 h-8 rounded-xl bg-brand-500/20 text-brand-accent flex items-center justify-center">
-                                    <i data-lucide="zap" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <div class="text-xs font-bold text-white">Vitesse d'exécution</div>
-                                    <div class="text-[10px] text-gray-400">Délais Respectés</div>
+                                <div class="flex justify-between border-b border-white/5 pb-1">
+                                    <span class="text-gray-500">LinkedIn:</span>
+                                    <a href="http://www.linkedin.com/in/rafidiarison-andritiana-michael-545207370" target="_blank" class="text-brand-accent hover:underline">Voir profil LinkedIn</a>
                                 </div>
                             </div>
-
-                            <!-- Tech Stack Mini Pills -->
-                            <div class="flex items-center justify-between gap-2 pt-2 border-t border-white/10 text-xs text-gray-400 font-mono">
-                                <span>React</span> • <span>PHP</span> • <span>Symfony</span> • <span>Tailwind</span>
-                            </div>
-
                         </div>
                     </div>
                 </div>
@@ -314,302 +262,345 @@
         </div>
     </section>
 
-    <!-- VALUE PROPOSITION / ABOUT SECTION -->
-    <section id="about" class="py-24 relative border-t border-gray-800/50">
+    <!-- SECTION PRIORITAIRE : PROBLEMES & SOLUTIONS CLIENT -->
+    <section id="solutions" class="py-24 relative border-t border-gray-800/50 bg-dark-card/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs uppercase font-mono tracking-widest text-brand-accent mb-3">À propos & Engagements</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Pourquoi me confier votre projet ?</h3>
-                <p class="text-gray-400 mt-4 text-base sm:text-lg">
-                    Chaque ligne de code est pensée pour servir un objectif concret : offrir une expérience utilisateur remarquable et soutenir les ventes ou l'adoption de vos services.
+                <h2 class="text-xs uppercase font-mono tracking-widest text-brand-accent mb-3">Résolution de Problèmes</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Quels problèmes puis-je résoudre pour votre entreprise ?</h3>
+                <p class="text-gray-400 mt-4 text-base">
+                    Un site web ne sert à rien s'il fait fuir vos visiteurs ou ne fonctionne pas sur mobile. Voici les solutions concrètes que j'apporte à vos pannes et vos projets.
                 </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Problème 1 -->
+                <div class="glass-card rounded-3xl p-8 border border-white/10 glass-card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-red-500/10 text-red-400 flex items-center justify-center text-xl mb-6">
+                            <i data-lucide="smartphone" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-xs font-mono uppercase text-red-400 font-bold">Problème Frequent #1</span>
+                        <h4 class="text-xl font-bold text-white mt-1 mb-3">Site non adapté aux Smartphones</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Plus de 60% de vos clients utilisent leur téléphone. Si votre site s'affiche mal sur mobile, vous perdez la majorité de vos opportunités.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-brand-500/10 border border-brand-500/20">
+                        <span class="text-xs font-mono uppercase text-brand-accent font-bold block mb-1">Ma Solution :</span>
+                        <p class="text-xs text-gray-200">Refonte intégrale avec design 100% Mobile-First, fluide et parfaitement lisible sur tous les écrans.</p>
+                    </div>
+                </div>
+
+                <!-- Problème 2 -->
+                <div class="glass-card rounded-3xl p-8 border border-white/10 glass-card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-6">
+                            <i data-lucide="store" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-xs font-mono uppercase text-amber-400 font-bold">Problème Frequent #2</span>
+                        <h4 class="text-xl font-bold text-white mt-1 mb-3">Aucune Présence Digitale</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Vous vendez des produits ou offrez des services mais vos clients ne vous trouvent pas sur internet, profitant à vos concurrents.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-brand-500/10 border border-brand-500/20">
+                        <span class="text-xs font-mono uppercase text-brand-accent font-bold block mb-1">Ma Solution :</span>
+                        <p class="text-xs text-gray-200">Création complète de votre site vitrine ou boutique e-commerce (React, PHP, WordPress) pour capter de nouveaux clients.</p>
+                    </div>
+                </div>
+
+                <!-- Problème 3 -->
+                <div class="glass-card rounded-3xl p-8 border border-white/10 glass-card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-orange-500/10 text-orange-400 flex items-center justify-center text-xl mb-6">
+                            <i data-lucide="zap-off" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-xs font-mono uppercase text-orange-400 font-bold">Problème Frequent #3</span>
+                        <h4 class="text-xl font-bold text-white mt-1 mb-3">Site Trop Lent au Chargement</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Un site qui met plus de 3 secondes à charger fait abandonner vos visiteurs et se fait pénaliser dans le classement Google.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-brand-500/10 border border-brand-500/20">
+                        <span class="text-xs font-mono uppercase text-brand-accent font-bold block mb-1">Ma Solution :</span>
+                        <p class="text-xs text-gray-200">Nettoyage de code, compression d'images, optimisation de base de données pour un affichage rapide.</p>
+                    </div>
+                </div>
+
+                <!-- Problème 4 -->
+                <div class="glass-card rounded-3xl p-8 border border-white/10 glass-card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-6">
+                            <i data-lucide="bug" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-xs font-mono uppercase text-purple-400 font-bold">Problème Frequent #4</span>
+                        <h4 class="text-xl font-bold text-white mt-1 mb-3">Bugs, Erreurs & Blocages</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Des formulaires de contact qui ne s'envoient pas, des pages d'erreur 404/500, des boutons inactifs ou des pannes inattendues.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-brand-500/10 border border-brand-500/20">
+                        <span class="text-xs font-mono uppercase text-brand-accent font-bold block mb-1">Ma Solution :</span>
+                        <p class="text-xs text-gray-200">Diagnostic précis, maintenance corrective et résolution définitive des bugs Frontend/Backend.</p>
+                    </div>
+                </div>
+
+                <!-- Problème 5 -->
+                <div class="glass-card rounded-3xl p-8 border border-white/10 glass-card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-rose-500/10 text-rose-400 flex items-center justify-center text-xl mb-6">
+                            <i data-lucide="shield-alert" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-xs font-mono uppercase text-rose-400 font-bold">Problème Frequent #5</span>
+                        <h4 class="text-xl font-bold text-white mt-1 mb-3">Failles de Sécurité & Risques</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Avertissements de site "Non sécurisé", vulnérabilités aux injections, absence de HTTPS ou pertes de données.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-brand-500/10 border border-brand-500/20">
+                        <span class="text-xs font-mono uppercase text-brand-accent font-bold block mb-1">Ma Solution :</span>
+                        <p class="text-xs text-gray-200">Sécurisation des bases de données MySQL, protection des API REST, mise en place SSL et bonnes pratiques POO.</p>
+                    </div>
+                </div>
+
+                <!-- Problème 6 -->
+                <div class="glass-card rounded-3xl p-8 border border-white/10 glass-card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl mb-6">
+                            <i data-lucide="sparkles" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-xs font-mono uppercase text-cyan-400 font-bold">Problème Frequent #6</span>
+                        <h4 class="text-xl font-bold text-white mt-1 mb-3">Design Obsolète & Ancien</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Un site web ancien qui ne renvoie pas une image professionnelle et moderne auprès de vos prospects.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-brand-500/10 border border-brand-500/20">
+                        <span class="text-xs font-mono uppercase text-brand-accent font-bold block mb-1">Ma Solution :</span>
+                        <p class="text-xs text-gray-200">Modernisation UI/UX complète avec des animations fluides, du CSS Tailwind récent et un design tendance.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION ENGAGEMENTS & GARANTIES CLIENT -->
+    <section class="py-16 bg-gradient-to-r from-brand-900/30 via-dark-bg to-brand-900/30 border-t border-b border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                
+                <div class="p-6 glass-card rounded-2xl border border-white/10">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="clock" class="w-6 h-6"></i>
+                    </div>
+                    <h5 class="text-lg font-bold text-white mb-2">Respect des Délais</h5>
+                    <p class="text-xs text-gray-400">Vos projets livrés dans les temps convenus sans retard imprévu.</p>
+                </div>
+
+                <div class="p-6 glass-card rounded-2xl border border-white/10">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/20 text-brand-accent flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="dollar-sign" class="w-6 h-6"></i>
+                    </div>
+                    <h5 class="text-lg font-bold text-white mb-2">Prix Compétitifs</h5>
+                    <p class="text-xs text-gray-400">Un tarif abordable et juste adapté à votre budget sans concession sur la qualité.</p>
+                </div>
+
+                <div class="p-6 glass-card rounded-2xl border border-white/10">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                    </div>
+                    <h5 class="text-lg font-bold text-white mb-2">Travail Bien Fait</h5>
+                    <p class="text-xs text-gray-400">Code propre, structuré, réutilisable et facile à faire évoluer dans le futur.</p>
+                </div>
+
+                <div class="p-6 glass-card rounded-2xl border border-white/10">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="headphones" class="w-6 h-6"></i>
+                    </div>
+                    <h5 class="text-lg font-bold text-white mb-2">Suivi & Garantie</h5>
+                    <p class="text-xs text-gray-400">Accompagnement et corrections offertes après livraison pour votre sérénité.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION SERVICES -->
+    <section id="services" class="py-24 relative border-t border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase font-mono tracking-widest text-brand-accent mb-3">Savoir-Faire & Prestations</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Ce que je peux créer pour vous</h3>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
-                <!-- Card 1 -->
-                <div class="glass-card rounded-2xl p-8 glass-card-hover border border-white/10">
-                    <div class="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-accent mb-6">
-                        <i data-lucide="layout-grid" class="w-7 h-7"></i>
+                <div class="glass-card rounded-3xl p-8 border border-white/10 flex flex-col justify-between glass-card-hover">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-500/10 text-brand-accent flex items-center justify-center mb-6">
+                            <i data-lucide="globe" class="w-7 h-7"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Sites Vitrines Professionnels</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Conception de sites vitrines élégants pour entreprises, agences et artisans désirant mettre en valeur leurs prestations.
+                        </p>
+                        <ul class="space-y-2 text-xs text-gray-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Responsive sur Mobile & PC</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Formulaires de réservation / contact</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Integration Photoshop / UI Design</li>
+                        </ul>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-3">Design Moderne & Responsive</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Des interfaces soignées qui s'adaptent parfaitement à tous les écrans (mobiles, tablettes et ordinateurs) pour maximiser le taux de conversion.
-                    </p>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="glass-card rounded-2xl p-8 glass-card-hover border border-white/10">
-                    <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-6">
-                        <i data-lucide="gauge" class="w-7 h-7"></i>
+                <div class="glass-card rounded-3xl p-8 border border-brand-500/30 flex flex-col justify-between glass-card-hover shadow-xl">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-6">
+                            <i data-lucide="shopping-cart" class="w-7 h-7"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Plateformes E-Commerce</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Sites de vente en ligne reliés à des API REST sécurisées pour vendre vos articles et produits facilement.
+                        </p>
+                        <ul class="space-y-2 text-xs text-gray-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Catalogue produits interactif</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Panier & parcours d'achat React</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Backend Symfony / PHP sécurisé</li>
+                        </ul>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-3">Performance & Rapidité</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Optimisation poussée des temps de chargement pour un meilleur référencement SEO et une navigation fluide sans ralentissement.
-                    </p>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="glass-card rounded-2xl p-8 glass-card-hover border border-white/10">
-                    <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-6">
-                        <i data-lucide="shield-check" class="w-7 h-7"></i>
+                <div class="glass-card rounded-3xl p-8 border border-white/10 flex flex-col justify-between glass-card-hover">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-6">
+                            <i data-lucide="cpu" class="w-7 h-7"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Maintenance & Maintenance Réseau</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Diagnostics informatiques, maintenance matériel/logiciel, installation de réseaux LAN/WAN et support technique.
+                        </p>
+                        <ul class="space-y-2 text-xs text-gray-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Diagnostic Software & Hardware</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Installation & Réseau LAN/WAN</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Électricité bâtiment & Diagnostic auto</li>
+                        </ul>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-3">Architecture Solide & Évolutive</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Utilisation des frameworks reconnus (React, Symfony, PHP, MySQL) garantissant sécurité, fiabilité et facilité de maintenance future.
-                    </p>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- SERVICES OFFERED -->
-    <section id="services" class="py-24 bg-dark-card/50 relative border-t border-gray-800/50">
+    <!-- SECTION COMPETENCES TECHNIQUES -->
+    <section id="skills" class="py-24 relative border-t border-gray-800/50 bg-dark-card/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs uppercase font-mono tracking-widest text-brand-accent mb-3">Services Client</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Des solutions sur-mesure pour vos besoins</h3>
-                <p class="text-gray-400 mt-4 text-base">
-                    Du simple site vitrine à la plateforme web complexe, je vous accompagne à chaque étape du développement.
-                </p>
+                <h2 class="text-xs uppercase font-mono tracking-widest text-brand-accent mb-3">Stack & Compétences</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Compétences & Savoir-Faire</h3>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
-                <!-- Service 1 -->
-                <div class="glass-card rounded-3xl p-8 border border-white/10 flex flex-col justify-between glass-card-hover relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <i data-lucide="globe" class="w-32 h-32 text-brand-accent"></i>
-                    </div>
-
-                    <div>
-                        <div class="inline-block px-3 py-1 rounded-full bg-brand-500/10 text-brand-accent text-xs font-semibold mb-6">
-                            Vitrine & Image de marque
+                <!-- Frontend -->
+                <div class="glass-card rounded-2xl p-6 border border-white/10">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-3 rounded-xl bg-brand-500/10 text-brand-accent">
+                            <i data-lucide="layout" class="w-6 h-6"></i>
                         </div>
-                        <h4 class="text-2xl font-bold text-white mb-4">Création de Sites Web</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                            Conception de sites vitrines élégants, landing pages captivantes et sites d'entreprises optimisés pour présenter vos services et attirer plus de clients.
-                        </p>
-
-                        <ul class="space-y-3 mb-8 text-sm text-gray-300">
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Design 100% sur-mesure
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Optimisé pour téléphones & tablettes
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> SEO & visibilité Google de base
-                            </li>
-                        </ul>
+                        <h4 class="text-lg font-bold text-white">Frontend</h4>
                     </div>
-
-                    <a href="#contact" class="w-full py-3 rounded-xl bg-white/5 hover:bg-brand-600 text-white font-semibold text-sm transition-all text-center border border-white/10 block">
-                        Demander un devis
-                    </a>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        HTML5, CSS, JS, React JS, Node JS, Bootstrap, Tailwind CSS, AOS.
+                    </p>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="glass-card rounded-3xl p-8 border border-brand-500/30 flex flex-col justify-between glass-card-hover relative overflow-hidden group shadow-xl shadow-brand-500/5">
-                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <i data-lucide="shopping-bag" class="w-32 h-32 text-cyan-400"></i>
-                    </div>
-
-                    <div>
-                        <div class="inline-block px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-semibold mb-6">
-                            Vente en Ligne
+                <!-- Backend -->
+                <div class="glass-card rounded-2xl p-6 border border-white/10">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400">
+                            <i data-lucide="server" class="w-6 h-6"></i>
                         </div>
-                        <h4 class="text-2xl font-bold text-white mb-4">Plateformes E-Commerce</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                            Boutiques en ligne modernes, rapides et sécurisées. Offrez à vos acheteurs une expérience d'achat simple et intuitive sur mobile comme sur ordinateur.
-                        </p>
-
-                        <ul class="space-y-3 mb-8 text-sm text-gray-300">
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Catalogue produits interactif
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Parcours de commande fluide
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Gestion des stocks & commandes
-                            </li>
-                        </ul>
+                        <h4 class="text-lg font-bold text-white">Backend & API</h4>
                     </div>
-
-                    <a href="#contact" class="w-full py-3 rounded-xl bg-gradient-to-r from-brand-600 to-cyan-500 text-white font-semibold text-sm transition-all text-center shadow-lg block">
-                        Lancer ma boutique
-                    </a>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        PHP, Symfony, Programation Orientée Objet (POO), REST API.
+                    </p>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="glass-card rounded-3xl p-8 border border-white/10 flex flex-col justify-between glass-card-hover relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <i data-lucide="smartphone" class="w-32 h-32 text-indigo-400"></i>
-                    </div>
-
-                    <div>
-                        <div class="inline-block px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-semibold mb-6">
-                            Sur-Mesure & Metier
+                <!-- Databases -->
+                <div class="glass-card rounded-2xl p-6 border border-white/10">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-3 rounded-xl bg-emerald-500/10 text-emerald-400">
+                            <i data-lucide="database" class="w-6 h-6"></i>
                         </div>
-                        <h4 class="text-2xl font-bold text-white mb-4">Applications Web & Mobile</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                            Applications web dynamiques (PWA, React, PHP/Symfony) adaptées à la gestion interne de votre entreprise ou à vos utilisateurs finaux.
-                        </p>
-
-                        <ul class="space-y-3 mb-8 text-sm text-gray-300">
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Interfaces interactives React / JS
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> API & Backend Symfony/PHP
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Gestion de base de données MySQL
-                            </li>
-                        </ul>
+                        <h4 class="text-lg font-bold text-white">Bases de Données</h4>
                     </div>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        MySQL, MariaDB.
+                    </p>
+                </div>
 
-                    <a href="#contact" class="w-full py-3 rounded-xl bg-white/5 hover:bg-brand-600 text-white font-semibold text-sm transition-all text-center border border-white/10 block">
-                        Créer une application
-                    </a>
+                <!-- Design & Tools -->
+                <div class="glass-card rounded-2xl p-6 border border-white/10">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-3 rounded-xl bg-purple-500/10 text-purple-400">
+                            <i data-lucide="palette" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white">Design & Outils</h4>
+                    </div>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        UI/UX Design, Photoshop, WordPress, IA, Canvas.
+                    </p>
+                </div>
+
+                <!-- Système & Réseau -->
+                <div class="glass-card rounded-2xl p-6 border border-white/10">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-3 rounded-xl bg-amber-500/10 text-amber-400">
+                            <i data-lucide="network" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white">Système & Réseau</h4>
+                    </div>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        Maintenance Hardware/Software, Réseaux LAN/WAN.
+                    </p>
+                </div>
+
+                <!-- Compétences Complémentaires -->
+                <div class="glass-card rounded-2xl p-6 border border-white/10">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-3 rounded-xl bg-indigo-500/10 text-indigo-400">
+                            <i data-lucide="wrench" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white">Autre Savoir-Faire</h4>
+                    </div>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        Diagnostic auto, Électricité bâtiment, Permis A et Permis B récents.
+                    </p>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- SKILLS SECTION -->
-    <section id="skills" class="py-24 relative border-t border-gray-800/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs uppercase font-mono tracking-widest text-brand-accent mb-3">Stack Technique</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Des technologies modernes & éprouvées</h3>
-                <p class="text-gray-400 mt-4 text-base">
-                    J'utilise un ensemble de technologies robustes pour garantir rapidité, sécurité et extensibilité.
-                </p>
-            </div>
-
-            <!-- Skills Grid -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-                
-                <!-- HTML5 -->
-                <div class="glass-card rounded-2xl p-6 border border-white/10 glass-card-hover flex flex-col items-center text-center">
-                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-500 flex items-center justify-center text-2xl mb-4">
-                        <i data-lucide="code" class="w-6 h-6"></i>
-                    </div>
-                    <h5 class="text-lg font-bold text-white mb-1">HTML5</h5>
-                    <span class="text-xs text-gray-400 mb-3">Structure sémantique</span>
-                    <div class="w-full bg-gray-800 h-1.5 rounded-full overflow-hidden">
-                        <div class="bg-orange-500 h-full rounded-full" style="width: 90%"></div>
-                    </div>
-                </div>
-
-                <!-- CSS3 & Tailwind -->
-                <div class="glass-card rounded-2xl p-6 border border-white/10 glass-card-hover flex flex-col items-center text-center">
-                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-2xl mb-4">
-                        <i data-lucide="palette" class="w-6 h-6"></i>
-                    </div>
-                    <h5 class="text-lg font-bold text-white mb-1">CSS3 / Tailwind</h5>
-                    <span class="text-xs text-gray-400 mb-3">Design moderne</span>
-                    <div class="w-full bg-gray-800 h-1.5 rounded-full overflow-hidden">
-                        <div class="bg-cyan-400 h-full rounded-full" style="width: 88%"></div>
-                    </div>
-                </div>
-
-                <!-- JavaScript -->
-                <div class="glass-card rounded-2xl p-6 border border-white/10 glass-card-hover flex flex-col items-center text-center">
-                    <div class="w-12 h-12 rounded-xl bg-yellow-500/10 text-yellow-400 flex items-center justify-center text-2xl mb-4">
-                        <i data-lucide="terminal" class="w-6 h-6"></i>
-                    </div>
-                    <h5 class="text-lg font-bold text-white mb-1">JavaScript</h5>
-                    <span class="text-xs text-gray-400 mb-3">Inters-dynamiques</span>
-                    <div class="w-full bg-gray-800 h-1.5 rounded-full overflow-hidden">
-                        <div class="bg-yellow-400 h-full rounded-full" style="width: 82%"></div>
-                    </div>
-                </div>
-
-                <!-- Bootstrap -->
-                <div class="glass-card rounded-2xl p-6 border border-white/10 glass-card-hover flex flex-col items-center text-center">
-                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-2xl mb-4">
-                        <i data-lucide="layout" class="w-6 h-6"></i>
-                    </div>
-                    <h5 class="text-lg font-bold text-white mb-1">Bootstrap</h5>
-                    <span class="text-xs text-gray-400 mb-3">Composants UI</span>
-                    <div class="w-full bg-gray-800 h-1.5 rounded-full overflow-hidden">
-                        <div class="bg-purple-400 h-full rounded-full" style="width: 90%"></div>
-                    </div>
-                </div>
-
-                <!-- React JS -->
-                <div class="glass-card rounded-2xl p-6 border border-white/10 glass-card-hover flex flex-col items-center text-center">
-                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-brand-accent flex items-center justify-center text-2xl mb-4">
-                        <i data-lucide="atom" class="w-6 h-6"></i>
-                    </div>
-                    <h5 class="text-lg font-bold text-white mb-1">React JS</h5>
-                    <span class="text-xs text-gray-400 mb-3">Applications Web</span>
-                    <div class="w-full bg-gray-800 h-1.5 rounded-full overflow-hidden">
-                        <div class="bg-brand-accent h-full rounded-full" style="width: 78%"></div>
-                    </div>
-                </div>
-
-                <!-- PHP -->
-                <div class="glass-card rounded-2xl p-6 border border-white/10 glass-card-hover flex flex-col items-center text-center">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-2xl mb-4">
-                        <i data-lucide="server" class="w-6 h-6"></i>
-                    </div>
-                    <h5 class="text-lg font-bold text-white mb-1">PHP</h5>
-                    <span class="text-xs text-gray-400 mb-3">Backend robuste</span>
-                    <div class="w-full bg-gray-800 h-1.5 rounded-full overflow-hidden">
-                        <div class="bg-indigo-400 h-full rounded-full" style="width: 80%"></div>
-                    </div>
-                </div>
-
-                <!-- MySQL -->
-                <div class="glass-card rounded-2xl p-6 border border-white/10 glass-card-hover flex flex-col items-center text-center">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mb-4">
-                        <i data-lucide="database" class="w-6 h-6"></i>
-                    </div>
-                    <h5 class="text-lg font-bold text-white mb-1">MySQL</h5>
-                    <span class="text-xs text-gray-400 mb-3">Bases de données</span>
-                    <div class="w-full bg-gray-800 h-1.5 rounded-full overflow-hidden">
-                        <div class="bg-emerald-400 h-full rounded-full" style="width: 80%"></div>
-                    </div>
-                </div>
-
-                <!-- Symfony -->
-                <div class="glass-card rounded-2xl p-6 border border-white/10 glass-card-hover flex flex-col items-center text-center">
-                    <div class="w-12 h-12 rounded-xl bg-gray-500/10 text-gray-300 flex items-center justify-center text-2xl mb-4">
-                        <i data-lucide="layers" class="w-6 h-6"></i>
-                    </div>
-                    <h5 class="text-lg font-bold text-white mb-1">Symfony</h5>
-                    <span class="text-xs text-gray-400 mb-3">Framework PHP</span>
-                    <div class="w-full bg-gray-800 h-1.5 rounded-full overflow-hidden">
-                        <div class="bg-gray-300 h-full rounded-full" style="width: 72%"></div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- PROJECTS SHOWCASE SECTION -->
-    <section id="projects" class="py-24 bg-dark-card/50 relative border-t border-gray-800/50">
+    <!-- SECTION PROJETS RÉALISÉS -->
+    <section id="projects" class="py-24 relative border-t border-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto mb-12">
                 <h2 class="text-xs uppercase font-mono tracking-widest text-brand-accent mb-3">Portfolio</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Une sélection de mes récents projets</h3>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Projets Réalisés</h3>
                 <p class="text-gray-400 mt-4 text-base">
-                    Découvrez quelques-unes des plateformes et applications conçues pour divers secteurs d'activité.
+                    Découvrez quelques exemples d'applications web et de plateformes conçues avec soin.
                 </p>
             </div>
 
-            <!-- Filter Buttons -->
+            <!-- Boutons Filtres -->
             <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
                 <button class="filter-btn active px-5 py-2.5 rounded-xl text-sm font-semibold transition-all bg-brand-600 text-white shadow-lg" data-filter="all">
                     Tous les projets
@@ -618,330 +609,284 @@
                     E-Commerce
                 </button>
                 <button class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all glass-card hover:bg-white/10 text-gray-300" data-filter="webapp">
-                    Applications Web
+                    Web Apps & Réseau
                 </button>
                 <button class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all glass-card hover:bg-white/10 text-gray-300" data-filter="showcase">
-                    Sites Vitrines
+                    Vitrines & Services
                 </button>
             </div>
 
-            <!-- Project Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Grille des Projets -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
-                <!-- Project 1: ME-TSENA -->
-                <div class="project-item ecommerce glass-card rounded-3xl overflow-hidden border border-white/10 glass-card-hover flex flex-col justify-between">
+                <!-- Projet Stush -->
+                <div class="project-item webapp glass-card rounded-3xl p-8 border border-white/10 glass-card-hover flex flex-col justify-between">
                     <div>
-                        <div class="relative h-52 overflow-hidden bg-gray-900 group">
-                            <img src="me-tsena.jpg" 
-                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1556742049-0a670f4a4591?auto=format&fit=crop&w=800&q=80';" 
-                                 alt="ME-TSENA" 
-                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-dark-bg/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                                <a href="assets/Project/e-tsena/index.html" target="_blank" class="p-3 rounded-full bg-brand-600 text-white hover:scale-110 transition-transform shadow-lg">
-                                    <i data-lucide="external-link" class="w-5 h-5"></i>
-                                </a>
-                            </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-mono text-cyan-400 font-semibold uppercase">React JS & Symfony</span>
+                            <a href="https://github.com/michael-rafidiarison" target="_blank" class="text-xs text-brand-accent hover:underline flex items-center gap-1">
+                                <i data-lucide="github" class="w-4 h-4"></i> [Lien GitHub]
+                            </a>
                         </div>
-
-                        <div class="p-6">
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="text-xs font-mono text-cyan-400 uppercase font-semibold">E-Commerce Mobile-First</span>
-                                <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-[10px] font-bold">Projet Complet</span>
-                            </div>
-                            <h4 class="text-xl font-bold text-white mb-2">ME-TSENA</h4>
-                            <p class="text-gray-400 text-sm mb-6 line-clamp-2">
-                                Plateforme e-commerce pensée pour faciliter les achats fluides et rapides depuis un smartphone.
-                            </p>
-
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="px-2.5 py-1 rounded-md bg-gray-800 text-gray-300 text-xs font-mono">HTML5</span>
-                                <span class="px-2.5 py-1 rounded-md bg-gray-800 text-gray-300 text-xs font-mono">CSS3</span>
-                                <span class="px-2.5 py-1 rounded-md bg-gray-800 text-gray-300 text-xs font-mono">JavaScript</span>
-                                <span class="px-2.5 py-1 rounded-md bg-gray-800 text-gray-300 text-xs font-mono">Bootstrap</span>
-                            </div>
-                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-2">Stush</h4>
+                        <p class="text-gray-300 text-sm mb-6">
+                            Réseau Social Scolaire conçu pour une école privée. Permet la communication, le partage d'informations et l'interaction entre élèves et enseignants.
+                        </p>
                     </div>
-
-                    <div class="p-6 pt-0">
-                        <a href="assets/Project/e-tsena/index.html" target="_blank" class="w-full py-2.5 rounded-xl bg-white/5 hover:bg-brand-600 text-white font-medium text-sm transition-all flex items-center justify-center gap-2 border border-white/10">
-                            <span>Voir le projet</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                        </a>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-mono">React JS</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-mono">Symfony</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-mono">API REST</span>
                     </div>
                 </div>
 
-                <!-- Project 2: Fast Food -->
-                <div class="project-item ecommerce showcase glass-card rounded-3xl overflow-hidden border border-white/10 glass-card-hover flex flex-col justify-between">
+                <!-- Projet Me-tsena -->
+                <div class="project-item ecommerce glass-card rounded-3xl p-8 border border-white/10 glass-card-hover flex flex-col justify-between">
                     <div>
-                        <div class="relative h-52 overflow-hidden bg-gray-900 group">
-                            <img src="fast-food.jpg" 
-                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80';" 
-                                 alt="Fast Food" 
-                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-dark-bg/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                                <a href="assets/Project/fastfood.html" target="_blank" class="p-3 rounded-full bg-brand-600 text-white hover:scale-110 transition-transform shadow-lg">
-                                    <i data-lucide="external-link" class="w-5 h-5"></i>
-                                </a>
-                            </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-mono text-cyan-400 font-semibold uppercase">E-Commerce API</span>
+                            <a href="https://github.com/michael-rafidiarison" target="_blank" class="text-xs text-brand-accent hover:underline flex items-center gap-1">
+                                <i data-lucide="github" class="w-4 h-4"></i> [Lien GitHub]
+                            </a>
                         </div>
-
-                        <div class="p-6">
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="text-xs font-mono text-cyan-400 uppercase font-semibold">Restauration & Menu</span>
-                                <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-[10px] font-bold">Ligne Directe</span>
-                            </div>
-                            <h4 class="text-xl font-bold text-white mb-2">Fast Food Online</h4>
-                            <p class="text-gray-400 text-sm mb-6 line-clamp-2">
-                                Site web dynamique destiné à présenter les menus et faciliter la prise de commande rapide en restaurant.
-                            </p>
-
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="px-2.5 py-1 rounded-md bg-gray-800 text-gray-300 text-xs font-mono">HTML5</span>
-                                <span class="px-2.5 py-1 rounded-md bg-gray-800 text-gray-300 text-xs font-mono">CSS3</span>
-                                <span class="px-2.5 py-1 rounded-md bg-gray-800 text-gray-300 text-xs font-mono">JavaScript</span>
-                                <span class="px-2.5 py-1 rounded-md bg-gray-800 text-gray-300 text-xs font-mono">Bootstrap</span>
-                            </div>
-                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-2">Me-tsena</h4>
+                        <p class="text-gray-300 text-sm mb-6">
+                            Plateforme d'achat et de vente en ligne reliée par une API REST performante, offrant un parcours d'achat fluide.
+                        </p>
                     </div>
-
-                    <div class="p-6 pt-0">
-                        <a href="assets/Project/fastfood.html" target="_blank" class="w-full py-2.5 rounded-xl bg-white/5 hover:bg-brand-600 text-white font-medium text-sm transition-all flex items-center justify-center gap-2 border border-white/10">
-                            <span>Voir le projet</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                        </a>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-mono">React JS</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-mono">Symfony</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-mono">MySQL</span>
                     </div>
                 </div>
 
-                <!-- Project 3: EDUCPLUS -->
-                <div class="project-item webapp glass-card rounded-3xl overflow-hidden border border-white/10 glass-card-hover flex flex-col justify-between">
+                <!-- Projet Driveway -->
+                <div class="project-item webapp showcase glass-card rounded-3xl p-8 border border-white/10 glass-card-hover flex flex-col justify-between">
                     <div>
-                        <div class="relative h-52 overflow-hidden bg-gray-900 group">
-                            <img src="educplus.jpg" 
-                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=800&q=80';" 
-                                 alt="EDUCPLUS" 
-                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-dark-bg/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                                <a href="#contact" class="p-3 rounded-full bg-brand-600 text-white hover:scale-110 transition-transform shadow-lg">
-                                    <i data-lucide="lock" class="w-5 h-5"></i>
-                                </a>
-                            </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-mono text-cyan-400 font-semibold uppercase">Réservation & Transport</span>
+                            <a href="https://github.com/michael-rafidiarison" target="_blank" class="text-xs text-brand-accent hover:underline flex items-center gap-1">
+                                <i data-lucide="github" class="w-4 h-4"></i> [Lien GitHub]
+                            </a>
                         </div>
-
-                        <div class="p-6">
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="text-xs font-mono text-cyan-400 uppercase font-semibold">Plateforme EdTech</span>
-                                <span class="px-2.5 py-1 rounded-md bg-blue-500/10 text-brand-accent text-[10px] font-bold">Full-Stack</span>
-                            </div>
-                            <h4 class="text-xl font-bold text-white mb-2">EDUCPLUS</h4>
-                            <p class="text-gray-400 text-sm mb-6 line-clamp-2">
-                                Plateforme interactive orientée vers l'apprentissage en ligne et la gestion de contenus éducatifs.
-                            </p>
-
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="px-2.5 py-1 rounded-md bg-gray-800 text-gray-300 text-xs font-mono">React JS</span>
-                                <span class="px-2.5 py-1 rounded-md bg-gray-800 text-gray-300 text-xs font-mono">PHP</span>
-                                <span class="px-2.5 py-1 rounded-md bg-gray-800 text-gray-300 text-xs font-mono">MySQL</span>
-                            </div>
-                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-2">Driveway</h4>
+                        <p class="text-gray-300 text-sm mb-6">
+                            Application web de réservation de Taxi et de location de voitures avec interface réactive et moderne.
+                        </p>
                     </div>
-
-                    <div class="p-6 pt-0">
-                        <a href="#contact" class="w-full py-2.5 rounded-xl bg-white/5 hover:bg-brand-600 text-white font-medium text-sm transition-all flex items-center justify-center gap-2 border border-white/10">
-                            <span>Demander une démo</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                        </a>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-mono">React JS</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-mono">Tailwind CSS</span>
                     </div>
                 </div>
 
-                <!-- Project 4: Garage Auto -->
-                <div class="project-item showcase glass-card rounded-3xl overflow-hidden border border-white/10 glass-card-hover flex flex-col justify-between">
+                <!-- Projet Agence Immobilière & Garage Auto -->
+                <div class="project-item showcase glass-card rounded-3xl p-8 border border-white/10 glass-card-hover flex flex-col justify-between">
                     <div>
-                        <div class="relative h-52 overflow-hidden bg-gray-900 group">
-                            <img src="garage.jpg" 
-                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=800&q=80';" 
-                                 alt="Garage Auto" 
-                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-dark-bg/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                                <a href="#contact" class="p-3 rounded-full bg-brand-600 text-white hover:scale-110 transition-transform shadow-lg">
-                                    <i data-lucide="eye" class="w-5 h-5"></i>
-                                </a>
-                            </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-mono text-cyan-400 font-semibold uppercase">Sites Vitrines & Prestations</span>
+                            <a href="https://github.com/michael-rafidiarison" target="_blank" class="text-xs text-brand-accent hover:underline flex items-center gap-1">
+                                <i data-lucide="github" class="w-4 h-4"></i> [Lien GitHub]
+                            </a>
                         </div>
-
-                        <div class="p-6">
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="text-xs font-mono text-cyan-400 uppercase font-semibold">Services & Métier</span>
-                                <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-[10px] font-bold">Site Vitrine</span>
-                            </div>
-                            <h4 class="text-xl font-bold text-white mb-2">Site Garage Automobile</h4>
-                            <p class="text-gray-400 text-sm mb-6 line-clamp-2">
-                                Présentation professionnelle d'activités de réparation automobile et prise de rendez-vous.
-                            </p>
-
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="px-2.5 py-1 rounded-md bg-gray-800 text-gray-300 text-xs font-mono">HTML5</span>
-                                <span class="px-2.5 py-1 rounded-md bg-gray-800 text-gray-300 text-xs font-mono">CSS3</span>
-                                <span class="px-2.5 py-1 rounded-md bg-gray-800 text-gray-300 text-xs font-mono">JavaScript</span>
-                            </div>
-                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-2">Agence Immobilière & Garage Auto</h4>
+                        <p class="text-gray-300 text-sm mb-6">
+                            Sites vitrines et de gestion de prestations de services pour la présentation de biens immobiliers et services automobiles.
+                        </p>
                     </div>
-
-                    <div class="p-6 pt-0">
-                        <a href="#contact" class="w-full py-2.5 rounded-xl bg-white/5 hover:bg-brand-600 text-white font-medium text-sm transition-all flex items-center justify-center gap-2 border border-white/10">
-                            <span>Voir les détails</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                        </a>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-mono">HTML5 / CSS</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-mono">JS</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-mono">PHP</span>
                     </div>
-                </div>
-
-                <!-- Callout Box: Add Your Project -->
-                <div class="glass-card rounded-3xl p-8 border border-dashed border-brand-500/40 flex flex-col justify-center items-center text-center group hover:border-brand-500 transition-colors">
-                    <div class="w-16 h-16 rounded-2xl bg-brand-500/10 text-brand-accent flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
-                        <i data-lucide="plus-circle" class="w-8 h-8"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-white mb-2">Votre Projet Ici ?</h4>
-                    <p class="text-gray-400 text-sm mb-6">
-                        Vous avez une idée de site, d'application ou de boutique en ligne ? Concevons ensemble votre projet.
-                    </p>
-                    <a href="#contact" class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm transition-all shadow-lg shadow-brand-500/20">
-                        Démarrer une collaboration
-                    </a>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- CV & DOWNLOAD SECTION -->
-    <section class="py-20 relative overflow-hidden bg-gradient-to-r from-brand-900/40 via-dark-bg to-brand-900/40 border-t border-gray-800/50">
-        <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
-            <div class="w-16 h-16 rounded-2xl bg-brand-500/20 text-brand-accent mx-auto flex items-center justify-center mb-6">
-                <i data-lucide="file-text" class="w-8 h-8"></i>
+    <!-- SECTION MON PARCOURS / EXPERIENCES / FORMATIONS -->
+    <section id="about" class="py-24 relative border-t border-gray-800/50 bg-dark-card/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase font-mono tracking-widest text-brand-accent mb-3">Expérience & Formations</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Mon Parcours Professionnel</h3>
             </div>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Curriculum Vitae Professionnel</h2>
-            <p class="text-gray-300 max-w-xl mx-auto text-base mb-8">
-                Consultez le détail de mes expériences, de mon parcours académique et de mes qualifications techniques.
-            </p>
-            <a href="cv.html" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-white text-dark-bg font-extrabold text-base hover:bg-gray-200 transition-all shadow-2xl hover:scale-105">
-                <i data-lucide="download" class="w-5 h-5 text-brand-600"></i>
-                <span>Télécharger mon CV (PDF/HTML)</span>
-            </a>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Expériences Professionnelles -->
+                <div class="space-y-6">
+                    <h4 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                        <i data-lucide="briefcase" class="w-6 h-6 text-brand-accent"></i> Expériences Professionnelles
+                    </h4>
+
+                    <div class="glass-card rounded-2xl p-6 border border-white/10">
+                        <div class="flex justify-between items-start mb-2">
+                            <h5 class="text-base font-bold text-white">Chauffeur Taxi-Moto Particulier</h5>
+                            <span class="text-xs font-mono text-brand-accent bg-brand-500/10 px-2.5 py-1 rounded-md">Mai 2025 - Présent</span>
+                        </div>
+                        <p class="text-xs text-gray-400">Transport privé de personnes et gestion d'itinéraires urbains à Antananarivo.</p>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-6 border border-white/10">
+                        <div class="flex justify-between items-start mb-2">
+                            <h5 class="text-base font-bold text-white">Livreur à Vélo — Milomay</h5>
+                            <span class="text-xs font-mono text-gray-400">2023 - 2024</span>
+                        </div>
+                        <p class="text-xs text-gray-400">Prise en charge, livraison rapide de colis et gestion de la relation client.</p>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-6 border border-white/10">
+                        <div class="flex justify-between items-start mb-2">
+                            <h5 class="text-base font-bold text-white">Diagnostic Automobile — Garage Mihary</h5>
+                            <span class="text-xs font-mono text-gray-400">2023 - 2024</span>
+                        </div>
+                        <p class="text-xs text-gray-400">Diagnostic électronique et mécanique, recherche de pannes et solutions techniques.</p>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-6 border border-white/10">
+                        <div class="flex justify-between items-start mb-2">
+                            <h5 class="text-base font-bold text-white">Gérant & Technicien Réseau — Cyber Mazava</h5>
+                            <span class="text-xs font-mono text-gray-400">2022 - 2023</span>
+                        </div>
+                        <p class="text-xs text-gray-400">Gestion opérationnelle, maintenance de l'infrastructure réseau et du parc informatique.</p>
+                    </div>
+                </div>
+
+                <!-- Formations, Langues & Atouts -->
+                <div class="space-y-6">
+                    <h4 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                        <i data-lucide="graduation-cap" class="w-6 h-6 text-cyan-400"></i> Formations & Diplômes
+                    </h4>
+
+                    <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-3">
+                        <div class="border-b border-white/5 pb-2">
+                            <div class="font-bold text-white text-sm">Digital Skills - Dev Web</div>
+                            <span class="text-xs text-brand-accent">2025</span>
+                        </div>
+                        <div class="border-b border-white/5 pb-2">
+                            <div class="font-bold text-white text-sm">Nir'info - Maintenance & Réseau</div>
+                            <span class="text-xs text-brand-accent">2021</span>
+                        </div>
+                        <div class="border-b border-white/5 pb-2">
+                            <div class="font-bold text-white text-sm">L.T.P Alarobia - BACC Technique & BEP</div>
+                            <span class="text-xs text-brand-accent">2019 - 2020</span>
+                        </div>
+                        <div>
+                            <div class="font-bold text-white text-sm">CEG Tanjombato (BEPC) & EP Soanirina (CEPE)</div>
+                        </div>
+                    </div>
+
+                    <h4 class="text-2xl font-bold text-white pt-4 mb-6 flex items-center gap-3">
+                        <i data-lucide="globe-2" class="w-6 h-6 text-emerald-400"></i> Langues, Aptitudes & Atouts
+                    </h4>
+
+                    <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-3 text-xs text-gray-300">
+                        <p><b class="text-white">Langues :</b> Malagasy (Maternel), Français (Intermédiaire), Anglais (Débutant)</p>
+                        <p><b class="text-white">Aptitudes :</b> Curieux, Discipliné, Autodidacte, Esprit d'équipe</p>
+                        <p><b class="text-white">Permis :</b> Permis A et Permis B récents</p>
+                        <p><b class="text-white">Atout Complémentaire :</b> Électricien bâtiment</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <!-- CONTACT & QUOTE ESTIMATOR SECTION -->
+    <!-- SECTION CONTACT -->
     <section id="contact" class="py-24 relative border-t border-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs uppercase font-mono tracking-widest text-brand-accent mb-3">Contact & Devis</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Lançons votre projet ensemble</h3>
-                <p class="text-gray-400 mt-4 text-base">
-                    Envoyez-moi un message ou complétez une demande rapide pour obtenir une estimation de devis.
-                </p>
+                <h2 class="text-xs uppercase font-mono tracking-widest text-brand-accent mb-3">Contact Direct</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Discutons de votre projet ou problème web</h3>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
                 
-                <!-- Direct Contact Details -->
+                <!-- Informations de contact -->
                 <div class="lg:col-span-5 space-y-6">
-                    
                     <div class="glass-card rounded-3xl p-8 border border-white/10 space-y-6">
-                        <h4 class="text-xl font-bold text-white mb-4">Coordonnées Directes</h4>
+                        <h4 class="text-xl font-bold text-white mb-4">Mes Coordonnées</h4>
 
-                        <!-- WhatsApp Link -->
                         <a href="https://wa.me/+261384134965" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/20 transition-all text-emerald-400 group">
                             <div class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
                                 <i data-lucide="message-circle" class="w-6 h-6"></i>
                             </div>
                             <div>
-                                <div class="text-xs text-gray-400 uppercase font-mono">Discuter sur WhatsApp</div>
-                                <div class="text-sm font-bold text-white">+261 38 41 349 65</div>
+                                <div class="text-xs text-gray-400 uppercase font-mono">WhatsApp & Téléphone</div>
+                                <div class="text-sm font-bold text-white">+261 38 41 34 965 / 038 41 34 965</div>
                             </div>
                         </a>
 
-                        <!-- LinkedIn Link -->
-                        <a href="https://www.linkedin.com/in/rafidiarison-andritiana-michael-545207370" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-brand-500/10 hover:bg-brand-500/20 border border-brand-500/20 transition-all text-brand-accent group">
-                            <div class="w-12 h-12 rounded-xl bg-brand-500/20 flex items-center justify-center text-brand-accent group-hover:scale-110 transition-transform">
-                                <i data-lucide="linkedin-circle" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-gray-400 uppercase font-mono">Profil Professionnel</div>
-                                <div class="text-sm font-bold text-white">Andritiana Michael RAFIDIARISON</div>
-                            </div>
-                        </a>
-
-                        <!-- Email -->
-                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+                        <a href="mailto:michaelandritiana586@gmail.com" class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all">
                             <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-gray-300">
                                 <i data-lucide="mail" class="w-6 h-6"></i>
                             </div>
                             <div>
-                                <div class="text-xs text-gray-400 uppercase font-mono">Adresse Email</div>
+                                <div class="text-xs text-gray-400 uppercase font-mono">Email</div>
                                 <div class="text-sm font-bold text-white">michaelandritiana586@gmail.com</div>
                             </div>
+                        </a>
+
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+                            <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-gray-300">
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase font-mono">Adresse</div>
+                                <div class="text-sm font-bold text-white">Lot SIA B 02 Ambondrona, Tana</div>
+                            </div>
                         </div>
 
+                        <a href="http://www.linkedin.com/in/rafidiarison-andritiana-michael-545207370" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-brand-500/10 hover:bg-brand-500/20 border border-brand-500/20 transition-all text-brand-accent">
+                            <div class="w-12 h-12 rounded-xl bg-brand-500/20 flex items-center justify-center text-brand-accent">
+                                <i data-lucide="linkedin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase font-mono">LinkedIn</div>
+                                <div class="text-sm font-bold text-white">RAFIDIARISON-Andritiana-michael</div>
+                            </div>
+                        </a>
                     </div>
-
-                    <!-- Client Guarantees -->
-                    <div class="glass-card rounded-3xl p-8 border border-white/10 space-y-4">
-                        <h5 class="text-base font-bold text-white mb-2">Mes Engagements Client</h5>
-                        
-                        <div class="flex items-start gap-3 text-sm text-gray-300">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
-                            <span>Réponse sous 24h garantie</span>
-                        </div>
-                        <div class="flex items-start gap-3 text-sm text-gray-300">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
-                            <span>Transparence sur les tarifs & délais</span>
-                        </div>
-                        <div class="flex items-start gap-3 text-sm text-gray-300">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
-                            <span>Accompagnement après la livraison</span>
-                        </div>
-                    </div>
-
                 </div>
 
-                <!-- Project Form -->
+                <!-- Formulaire -->
                 <div class="lg:col-span-7">
                     <div class="glass-card rounded-3xl p-8 sm:p-10 border border-white/10 shadow-2xl">
-                        <h4 class="text-2xl font-bold text-white mb-2">Parlez-moi de votre projet</h4>
-                        <p class="text-gray-400 text-sm mb-8">Remplissez ce formulaire et recevez un retour rapide sous 24 heures.</p>
+                        <h4 class="text-2xl font-bold text-white mb-2">Envoyez-moi un message</h4>
+                        <p class="text-gray-400 text-sm mb-8">Décrivez votre problème ou besoin de site web et recevez une réponse sous 24h.</p>
 
                         <form id="contact-form" onsubmit="event.preventDefault(); handleFormSubmit();" class="space-y-6">
-                            
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div>
-                                    <label class="block text-xs font-mono uppercase text-gray-400 mb-2">Votre Nom & Prénom *</label>
-                                    <input type="text" required placeholder="Jean Dupont" class="w-full px-4 py-3 rounded-xl bg-gray-900/80 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-brand-500 transition-colors text-sm">
+                                    <label class="block text-xs font-mono uppercase text-gray-400 mb-2">Nom & Prénom *</label>
+                                    <input type="text" required placeholder="Votre nom" class="w-full px-4 py-3 rounded-xl bg-gray-900/80 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-brand-500 transition-colors text-sm">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-mono uppercase text-gray-400 mb-2">Votre Email *</label>
-                                    <input type="email" required placeholder="jean@exemple.com" class="w-full px-4 py-3 rounded-xl bg-gray-900/80 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-brand-500 transition-colors text-sm">
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-xs font-mono uppercase text-gray-400 mb-2">Type de projet *</label>
-                                    <select class="w-full px-4 py-3 rounded-xl bg-gray-900/80 border border-gray-700 text-white focus:outline-none focus:border-brand-500 transition-colors text-sm">
-                                        <option>Site Vitrine / Entreprise</option>
-                                        <option>Boutique E-Commerce</option>
-                                        <option>Application Web / Mobile</option>
-                                        <option>Autre / Refonte</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-mono uppercase text-gray-400 mb-2">Numéro Téléphone / WhatsApp</label>
-                                    <input type="tel" placeholder="+261 34 ..." class="w-full px-4 py-3 rounded-xl bg-gray-900/80 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-brand-500 transition-colors text-sm">
+                                    <label class="block text-xs font-mono uppercase text-gray-400 mb-2">Email *</label>
+                                    <input type="email" required placeholder="votre@email.com" class="w-full px-4 py-3 rounded-xl bg-gray-900/80 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-brand-500 transition-colors text-sm">
                                 </div>
                             </div>
 
                             <div>
-                                <label class="block text-xs font-mono uppercase text-gray-400 mb-2">Description de vos besoins *</label>
-                                <textarea rows="4" required placeholder="Décrivez brièvement les fonctionnalités souhaitées, les délais ou vos objectifs..." class="w-full px-4 py-3 rounded-xl bg-gray-900/80 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-brand-500 transition-colors text-sm"></textarea>
+                                <label class="block text-xs font-mono uppercase text-gray-400 mb-2">Problème ou Besoin principal *</label>
+                                <select class="w-full px-4 py-3 rounded-xl bg-gray-900/80 border border-gray-700 text-white focus:outline-none focus:border-brand-500 transition-colors text-sm">
+                                    <option>Site non responsive sur téléphone mobile</option>
+                                    <option>Nouveau projet de site vitrine ou e-commerce</option>
+                                    <option>Correction de bugs / Maintenance web</option>
+                                    <option>Optimisation de la vitesse du site</option>
+                                    <option>Problème de sécurité / Base de données</option>
+                                    <option>Autre demande</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-mono uppercase text-gray-400 mb-2">Message & Détails *</label>
+                                <textarea rows="4" required placeholder="Explication de votre problème ou de vos besoins..." class="w-full px-4 py-3 rounded-xl bg-gray-900/80 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-brand-500 transition-colors text-sm"></textarea>
                             </div>
 
                             <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 via-brand-500 to-cyan-500 text-white font-bold text-base shadow-xl shadow-brand-500/25 hover:shadow-brand-500/40 hover:scale-[1.01] transition-all flex items-center justify-center gap-3">
@@ -949,11 +894,9 @@
                                 <span>Envoyer ma demande</span>
                             </button>
 
-                            <!-- Alert status message box -->
                             <div id="form-status" class="hidden p-4 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-sm text-center">
-                                Merci ! Votre message a été envoyé avec succès. Je vous recontacterai très rapidement.
+                                Merci ! Votre message a bien été envoyé. Je vous répondrai dans les plus brefs délais.
                             </div>
-
                         </form>
                     </div>
                 </div>
@@ -962,50 +905,50 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- PIED DE PAGE -->
     <footer class="py-12 bg-dark-bg border-t border-gray-800 text-gray-400 text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-                
                 <div>
                     <a href="#home" class="text-xl font-extrabold text-white">
-                        Michael<span class="text-brand-accent">.</span>
+                        Andritiana Michael RAFIDIARISON
                     </a>
-                    <p class="text-xs text-gray-500 mt-1">Andritiana Michael RAFIDIARISON — Développeur Web & Mobile Full-Stack</p>
+                    <p class="text-xs text-gray-500 mt-1">Développeur Full-Stack — Madagascar</p>
                 </div>
 
-                <!-- Social Icons -->
                 <div class="flex items-center gap-4">
-                    <a href="https://www.linkedin.com/in/rafidiarison-andritiana-michael-545207370" target="_blank" aria-label="Linkedin" class="w-10 h-10 rounded-xl bg-gray-900 hover:bg-brand-600 text-white flex items-center justify-center transition-colors">
+                    <a href="https://github.com/michael-rafidiarison" target="_blank" class="w-10 h-10 rounded-xl bg-gray-900 hover:bg-brand-600 text-white flex items-center justify-center transition-colors">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                    </a>
+                    <a href="http://www.linkedin.com/in/rafidiarison-andritiana-michael-545207370" target="_blank" class="w-10 h-10 rounded-xl bg-gray-900 hover:bg-brand-600 text-white flex items-center justify-center transition-colors">
                         <i data-lucide="linkedin" class="w-5 h-5"></i>
                     </a>
-                    <a href="https://wa.me/+261384134965" target="_blank" aria-label="WhatsApp" class="w-10 h-10 rounded-xl bg-gray-900 hover:bg-emerald-600 text-white flex items-center justify-center transition-colors">
+                    <a href="https://wa.me/+261384134965" target="_blank" class="w-10 h-10 rounded-xl bg-gray-900 hover:bg-emerald-600 text-white flex items-center justify-center transition-colors">
                         <i data-lucide="message-circle" class="w-5 h-5"></i>
                     </a>
                 </div>
 
                 <div class="text-xs text-gray-500">
-                    © <span id="year"></span> Andritiana Michael. Tous droits réservés.
+                    © <span id="year"></span> Rafidiarison Andritiana Michael. Tous droits réservés.
                 </div>
-
             </div>
         </div>
     </footer>
 
-    <!-- BACK TO TOP BUTTON -->
+    <!-- BOUTON RETOUR EN HAUT -->
     <button id="back-to-top" aria-label="Retour en haut" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-brand-600 hover:bg-brand-500 text-white flex items-center justify-center shadow-2xl transition-all opacity-0 pointer-events-none z-50">
         <i data-lucide="arrow-up" class="w-5 h-5"></i>
     </button>
 
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- LOGIQUE JAVASCRIPT -->
     <script>
-        // Initialize Lucide Icons
+        // Lucide Icons
         lucide.createIcons();
 
-        // Dynamic Year Update
+        // Année Dynamique
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Navbar Scroll Blur Effect & Back to Top Visibility
+        // Header Scroll & Back to top
         const header = document.getElementById('header');
         const backToTopBtn = document.getElementById('back-to-top');
 
@@ -1031,7 +974,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Mobile Menu Toggle
+        // Menu Mobile Toggle
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -1046,19 +989,17 @@
             });
         });
 
-        // Project Filtering Logic
+        // Filtrage des projets
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectItems = document.querySelectorAll('.project-item');
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Remove active styling from all buttons
                 filterBtns.forEach(b => {
                     b.classList.remove('bg-brand-600', 'text-white', 'shadow-lg');
                     b.classList.add('glass-card', 'text-gray-300');
                 });
 
-                // Add active styling to clicked button
                 btn.classList.add('bg-brand-600', 'text-white', 'shadow-lg');
                 btn.classList.remove('glass-card', 'text-gray-300');
 
@@ -1074,7 +1015,7 @@
             });
         });
 
-        // Form Submit Simulation
+        // Formulaire Contact Simulation
         function handleFormSubmit() {
             const statusBox = document.getElementById('form-status');
             statusBox.classList.remove('hidden');
@@ -1086,4 +1027,3 @@
     </script>
 </body>
 </html>
-```
